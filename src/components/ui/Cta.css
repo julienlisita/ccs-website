@@ -1,0 +1,19 @@
+/* src/components/ui/Cta.css */
+
+/* Base section */
+.cta-section {
+  @apply py-12 sm:py-16 lg:py-20;
+  background-color: #e2e2e2; /* bleu principal */
+  color: black;
+}
+
+/* Title */
+.cta-title {
+  @apply text-2xl sm:text-3xl font-bold;
+}
+
+/* Description */
+.cta-description {
+  @apply max-w-2xl text-lg;
+  opacity: 0.9;
+}

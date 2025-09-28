@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Thème global light / dark avec variables CSS */
+/* :root {
+  --background: #ffffff;
+  --foreground: #171717;
+} */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #ededed;
+    --foreground: #0a0a0a;
+  }
+}
+
+:root {
+  --header-height: 56px; /* h-14 */
+}
+
+@media (min-width: 640px) {
+  :root {
+    --header-height: 64px; /* sm:h-16 */
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --header-height: 80px; /* lg:h-20 */
+  }
+}
+
+/* Reset simple et base */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: system-ui, sans-serif;
+  background: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
