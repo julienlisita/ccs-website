@@ -2,23 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Thème global light / dark avec variables CSS */
-/* :root {
-  --background: #ffffff;
-  --foreground: #171717;
-} */
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #ededed;
-    --foreground: #0a0a0a;
-  }
-}
-
+/* === CCS Palette & Tokens === */
 :root {
+  /* Named colors (direct from brand palette) */
+  --color-ochre: #ba805b; /* Ocre */
+  --color-green: #92a095; /* Green/grey */
+  --color-cream: #f3ece2; /* Cream */
+  --color-earth: #785f49; /* Earth/Brown */
+
+  /* Functional tokens (used in code) */
+  --color-primary: #ba805b; /* Ocre */
+  --color-secondary: #92a095; /* Vert/gris */
+  --color-bg: #f3ece2; /* Crème */
+  --color-dark: #785f49; /* Terre */
+
+  /* Layout tokens */
   --header-height: 56px; /* h-14 */
 }
 
+/* Responsive header heights */
 @media (min-width: 640px) {
   :root {
     --header-height: 64px; /* sm:h-16 */
