@@ -5,13 +5,11 @@ import Hero from '../section/Hero';
 import ServicesFeaturesIntro from '../section/ServicesFeaturesIntro';
 import TestimonialsSectionHomeServer from '../section/TestimonialsSectionHomeServer';
 import NewsSectionHomeServer from '../section/NewsSectionHomeServer';
-import AboutSectionHome from '../section/AboutSectionHome';
 
 export default function Home() {
   return (
     <div>
       <Hero />
-      <AboutSectionHome />
       <ServicesFeaturesIntro />
       <TestimonialsSectionHomeServer />
       <NewsSectionHomeServer />
