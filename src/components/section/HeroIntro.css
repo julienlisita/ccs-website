@@ -2,12 +2,8 @@
 
 /* Thème (couleurs) */
 .hero-intro {
-  /* tokens personnalisables si tu veux (peuvent venir de :root) */
-  --hero-bg: var(--color-brand, #3e8ce0);
-  --hero-fg: #ffffff;
-
-  background-color: var(--hero-bg);
-  color: var(--hero-fg);
+  background-color: var(--color-bg);
+  color: var(--color-dark);
 }
 
 /* Layout & responsive via Tailwind (@apply) */
@@ -44,7 +40,7 @@
 
 .hero-intro__subtitle {
   @apply text-lg opacity-90 max-w-2xl text-center;
-  color: rgba(255, 255, 255, 0.85);
+  color: currentColor;
 }
 .hero-intro.is-left .hero-intro__subtitle {
   @apply lg:text-left;
