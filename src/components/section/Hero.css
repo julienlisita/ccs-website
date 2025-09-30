@@ -1,0 +1,6 @@
+.hero {
+  background-image: url('/images/hero.avif'); /* place ton image dans /public/images */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
