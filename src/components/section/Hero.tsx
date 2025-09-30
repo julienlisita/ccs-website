@@ -2,6 +2,7 @@
 
 'use client';
 
+import Image from 'next/image';
 import Button from '@/components/ui/Button';
 import PageTitle from '@/components/ui/PageTitle';
 // import './Hero.css';
@@ -20,7 +21,17 @@ export default function Hero() {
       {/* Overlay noir avec opacité */}
       <div className="absolute inset-0 bg-black/60" />
 
+      {/* Logo */}
       <div className="max-w-4xl mx-auto space-y-6 z-10">
+        <div className="flex justify-center">
+          <Image
+            src="/images/logo-CCS.jpg"
+            alt="Company Care & Services logo"
+            width={120}
+            height={120}
+            className="mb-4 rounded-sm"
+          />
+        </div>
         <PageTitle color="#FFFFFF"> Company Care & Services</PageTitle>
         <h2 className="text-xl sm:text-2xl lg:text-3xl text-white">
           Un accompagnement humain et professionnel à domicile
