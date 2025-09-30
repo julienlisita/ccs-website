@@ -1,9 +1,13 @@
+/* src/components/layout/Footer.css */
+
 .footer {
   @apply bg-white border-t border-gray-300 
          flex flex-col space-y-3 
          sm:flex-row sm:space-y-0 
          justify-between items-center 
          px-4 py-3;
+  background-color: var(--color-dark);
+  color: var(--color-bg);
 }
 
 .footer-logo {
@@ -18,7 +22,7 @@
 }
 
 .footer-links a {
-  color: black;
+  color: currentColor;
   text-decoration: none;
 }
 
@@ -28,7 +32,7 @@
 
 .footer-copy {
   @apply font-bold text-xs sm:text-sm text-center;
-  color: black;
+  color: currentColor;
 }
 
 .footer-socials {
@@ -37,9 +41,9 @@
 
 .footer-icon {
   @apply w-8 h-8 sm:w-10 sm:h-10 transition;
-  color: black;
+  color: currentColor;
 }
 
 .footer-icon:hover {
-  color: #6b7280; /* gray-500 */
+  color: var(--color-primary);
 }
