@@ -83,7 +83,7 @@ export default function Header() {
       {/* Logo (lien vers l’accueil) */}
       <Link href="/" aria-label="Accueil" className="logo-wrapper">
         <Image
-          src="/images/logo.png"
+          src="/images/logo-CCS.jpg"
           alt="Logo du site"
           fill
           sizes="(max-width: 768px) 40px, (max-width: 1024px) 48px, 56px"

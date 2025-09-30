@@ -3,7 +3,8 @@
 /* Layout & structure via @apply */
 .site-header {
   @apply fixed top-0 z-50 w-full h-14 sm:h-16 lg:h-20 px-4 sm:px-6 lg:px-8 flex items-center justify-between shadow-md;
-  background-color: white;
+  background-color: #fbf4e8;
+  color: var(--color-dark);
 }
 
 .logo-wrapper {
@@ -37,7 +38,7 @@
   opacity: 0;
   padding-top: 0;
   padding-bottom: 0;
-  background-color: white;
+  background-color: var(--color-bg);
 }
 
 .mobile-menu.open {
@@ -57,11 +58,11 @@
 
 /* ----- Couleurs / États (CSS pur) ----- */
 .main-nav {
-  color: #1f2937; /* text-gray-800 */
+  color: currentColor;
 }
 
 .nav-link:hover {
-  color: #2563eb; /* hover:text-blue-600 */
+  color: var(--color-primary);
 }
 
 .nav-link[aria-current='page'] {
@@ -71,30 +72,30 @@
 }
 
 .nav-link:focus-visible {
-  outline: 2px solid #2563eb; /* blue-600 */
+  outline: 2px solid var(--color-dark);
   outline-offset: 2px;
   border-radius: 0.25rem;
 }
 
 .icon {
-  color: #1f2937; /* text-gray-800 */
+  color: currentColor;
 }
 
 .menu-toggle:focus-visible {
-  outline: 2px solid #2563eb;
+  outline: 2px solid var(--color-dark);
   outline-offset: 2px;
 }
 
 .mobile-link:hover {
-  background-color: #f3f4f6; /* hover:bg-gray-100 */
+  background-color: #fbf4e8;
 }
 
 .mobile-link[aria-current='page'] {
-  background-color: #f9fafb; /* gray-50 */
+  background-color: #fbf4e8;
   font-weight: 600;
 }
 
 .mobile-link:focus-visible {
-  outline: 2px solid #2563eb;
+  outline: 2px solid var(--color-dark);
   outline-offset: 2px;
 }
