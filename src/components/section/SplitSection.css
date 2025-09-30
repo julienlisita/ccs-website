@@ -62,32 +62,16 @@
   @apply text-center lg:text-left;
 }
 
-.split__eyebrow {
-  @apply text-sm font-semibold uppercase tracking-wide;
-  color: var(--color-vert);
-}
-
-.split__title {
-  /* aligné sur FeaturesGrid: title mt-2 */
-  @apply text-2xl sm:text-3xl font-bold mt-2;
-  color: var(--color-terre);
-}
-
-.split__subtitle {
-  /* aligné sur FeaturesGrid: subtitle mt-3 */
-  @apply text-lg font-medium mt-3;
-  color: var(--color-vert);
-}
-
 .split__text {
   /* bloc de texte principal — respiration identique */
   @apply mt-5 text-base leading-relaxed;
-  color: var(--color-terre);
+  color: var(--color-dark);
 }
 
 /* Slot extra (liste, points forts, etc.) */
 .split__extra {
   @apply mt-5 space-y-3;
+  color: var(--color-dark);
 }
 
 /* Actions (CTA) */
