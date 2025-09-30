@@ -20,8 +20,8 @@
 
 .features__page-btn {
   @apply px-4 py-2 text-sm font-semibold rounded-[12px] transition;
-  border: 2px solid #3e8ce0;
-  color: #3e8ce0;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
   background-color: #ffffff;
 }
 
@@ -31,11 +31,11 @@
 }
 
 .features__page-btn:hover:not(:disabled) {
-  background-color: #3e8ce0;
+  background-color: var(--color-primary);
   color: #ffffff;
 }
 
 .features__page-info {
   @apply text-sm;
-  color: black;
+  color: var(--color-primary);
 }
