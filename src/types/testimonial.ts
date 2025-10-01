@@ -10,6 +10,7 @@ export interface Testimonial {
   avatarUrl?: string; // optionnel: /images/clients/lesly.jpg
   displayDate?: string; // ex: “Août 2025”
   highlight?: boolean; // met la carte en avant
+  city?: string;
   variant?: 'default' | 'compact' | 'horizontal';
   className?: string;
   publishedAt?: string; // ISO string si tu veux trier par date de publication
