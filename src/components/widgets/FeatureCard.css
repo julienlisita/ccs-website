@@ -3,8 +3,8 @@
 /* Base card */
 .feature-card {
   @apply rounded-xl shadow-sm transition overflow-hidden;
-  background-color: var(--color-bg); /* crème */
-  border: 1px solid var(--color-bg); /* fix */
+  background-color: white;
+  /* border: 1px solid var(--color-bg);  */
 }
 
 /* Variantes */
@@ -21,18 +21,19 @@
 
 /* Header (pas de text-center ici, géré par TS) */
 .feature-card__header {
-  @apply flex flex-col space-y-2 p-4;
-  color: #ffffff; /* quand headerColor/gradient */
+  @apply flex flex-col space-y-4 p-4;
+  color: var(--color-dark); /* quand headerColor/gradient */
 }
 
 /* Body */
 .feature-card__body {
-  @apply flex flex-col p-6 pt-8 gap-2;
+  @apply flex flex-col p-4 pt-0 gap-2;
 }
 
 /* Icon */
 .feature-card__icon {
   @apply inline-flex items-center;
+  color: var(--color-secondary);
 }
 .feature-card__icon-inner {
   @apply w-10 h-10;
@@ -45,17 +46,17 @@
 /* Title */
 .feature-card__title {
   @apply text-base sm:text-lg font-semibold;
-  color: black;
+  color: var(--color-dark);
 }
 .feature-card--gradient .feature-card__title,
 .feature-card__header .feature-card__title {
-  color: #ffffff;
+  color: var(--color-dark);
 }
 
 /* Description */
 .feature-card__desc {
   @apply text-sm leading-relaxed;
-  color: #4b5563; /* gray-600 */
+  color: var(--color-dark);
 }
 .feature-card--gradient .feature-card__desc {
   color: #ffffff;
