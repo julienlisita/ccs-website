@@ -1,13 +1,13 @@
 /* src/components/widgets/NewsCard.css */
 
 .news-card {
-  @apply flex flex-col sm:flex-row  w-full max-w-xl rounded-lg shadow transition hover:shadow-md overflow-hidden;
+  @apply items-stretch flex flex-col sm:flex-row  w-full max-w-md rounded-lg;
   background-color: white;
   text-decoration: none;
 }
 
 .news-card-image {
-  @apply w-full sm:w-40 h-48 sm:h-auto flex-shrink-0;
+  @apply w-full sm:w-52 sm:h-52 flex-shrink-0 rounded-lg overflow-hidden;
 }
 
 .news-card-image img {
@@ -16,7 +16,7 @@
 }
 
 .news-card-content {
-  @apply flex flex-col p-5;
+  @apply flex flex-col py-5 sm:py-0 sm:px-5 justify-between;
 }
 
 .news-card-title {
@@ -30,18 +30,19 @@
 }
 
 .news-card-meta {
-  @apply flex justify-between items-center text-xs;
+  @apply flex gap-2 justify-between items-center text-xs;
   color: #6b7280;
 }
 
 .news-card-date {
-  @apply text-xs;
-  color: #9ca3af;
+  @apply text-xs whitespace-nowrap;
+  color: var(--color-secondary);
 }
 
 .news-card-source {
-  @apply text-sm;
-  color: #6b7280;
+  @apply text-sm py-0.5 px-2;
+  background-color: var(--color-secondary);
+  color: white;
 }
 
 .news-card-actions {

@@ -58,7 +58,10 @@ export default function NewsCard({
               rel="noopener noreferrer"
               aria-label={`Lire l’article : ${title}`}
             >
-              Lire l’article
+              Lire l’article{' '}
+              <span className="ml-2" aria-hidden="true">
+                &rsaquo;
+              </span>
             </Button>
           </div>
         )}
