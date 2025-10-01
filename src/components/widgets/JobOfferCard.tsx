@@ -51,9 +51,13 @@ export function JobOfferCard({
       <div>
         <Button
           href={`/recruitment?apply=${encodeURIComponent(title)}`}
+          variant="secondary"
           aria-label={`Postuler à l'offre ${title}`}
         >
-          Postuler
+          Postuler{' '}
+          <span className="ml-2" aria-hidden="true">
+            &rsaquo;
+          </span>
         </Button>
       </div>
     </div>
