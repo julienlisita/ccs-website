@@ -20,14 +20,15 @@
 }
 
 .btn.secondary {
-  background-color: white;
+  background-color: transparent;
   color: var(--color-primary);
-  border: 2px solid var(--color-primary);
+  border: none;
+  padding-left: 0;
 }
 .btn.secondary:hover {
-  background-color: var(--color-primary);
-  color: white;
-  border: 2px solid var(--color-primary);
+  background-color: transparent;
+  color: var(--color-secondary);
+  border: none;
 }
 
 .btn:disabled {
