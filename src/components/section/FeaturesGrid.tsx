@@ -133,6 +133,7 @@ export default function FeaturesGrid<TItem = FeatureItem>({
         description={f.description}
         variant="with-header"
         gradient={['#3e8ce0', '#7aa9f5']}
+        align="left"
       />
     );
   };
