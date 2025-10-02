@@ -3,6 +3,7 @@
 import ContactForm from '@/components/form/ContactForm';
 import HeroIntro from '../section/HeroIntro';
 import { Mail } from 'lucide-react';
+import ContactInfoSection from '../section/ContactInfoSection';
 
 export default function Contact() {
   return (
@@ -13,9 +14,8 @@ export default function Contact() {
         subtitle="Besoin d’informations ou d’un devis ? Nous sommes à votre écoute."
         align="center"
       />
-      <div className="max-w-2xl w-full mx-auto py-4">
-        <ContactForm />
-      </div>
+      <ContactForm />
+      <ContactInfoSection />
     </div>
   );
 }
