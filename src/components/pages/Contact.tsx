@@ -1,9 +1,9 @@
 // src/components/pages/Contact.tsx
 
-import ContactForm from '@/components/form/ContactForm';
 import HeroIntro from '../section/HeroIntro';
 import { Mail } from 'lucide-react';
 import ContactInfoSection from '../section/ContactInfoSection';
+import ContactFormSection from '../section/ContactFormSection';
 
 export default function Contact() {
   return (
@@ -14,7 +14,12 @@ export default function Contact() {
         subtitle="Besoin d’informations ou d’un devis ? Nous sommes à votre écoute."
         align="center"
       />
-      <ContactForm />
+      <ContactFormSection
+        eyebrow="Contact"
+        title="Parlez-nous de votre besoin"
+        subtitle="Remplissez le formulaire, nous revenons vers vous rapidement."
+        align="left"
+      />
       <ContactInfoSection />
     </div>
   );
