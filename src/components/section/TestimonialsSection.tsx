@@ -14,11 +14,6 @@ export default function TestimonialsSection({ items }: { items: ReadonlyArray<Te
       subtitle="Consultez les retours authentiques de nos clients."
       align="left"
       items={items}
-      tabs={[
-        { label: 'Tous', value: 'all' },
-        { label: 'Mise en avant', value: 'featured' },
-      ]}
-      defaultTab="all"
       filterByTab={(t, tab) => (tab === 'featured' ? Boolean(t.highlight) : true)}
       gridClassName="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-5 sm:gap-6 lg:gap-8"
       pageSize={8}
@@ -32,7 +27,6 @@ export default function TestimonialsSection({ items }: { items: ReadonlyArray<Te
           avatarUrl={t.avatarUrl}
           displayDate={t.displayDate}
           city={t.city}
-          highlight={t.highlight}
           variant="default"
         />
       )}

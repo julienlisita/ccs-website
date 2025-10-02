@@ -21,7 +21,19 @@ export default function TestimonialsSectionHome({ items }: Props) {
       ctaLabel="Voir tous les témoignages"
       ctaHref="/testimonials"
       gridClassName="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-5 sm:gap-6 lg:gap-8"
-      renderItem={(t) => <TestimonialCard {...t} />}
+      renderItem={(t) => (
+        <TestimonialCard
+          name={t.name}
+          role={t.role}
+          company={t.company}
+          quote={t.quote}
+          rating={t.rating}
+          avatarUrl={t.avatarUrl}
+          displayDate={t.displayDate}
+          city={t.city}
+          variant="default"
+        />
+      )}
       getKey={(t) => t.id}
     />
   );

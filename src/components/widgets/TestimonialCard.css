@@ -2,7 +2,7 @@
 
 /* Layout (Tailwind via @apply) */
 .t-card {
-  @apply w-full rounded-xl shadow-md p-6 flex flex-col gap-4 transition hover:shadow-lg bg-white;
+  @apply w-full flex flex-col gap-8 bg-white;
 }
 
 .t-card--compact {
@@ -21,7 +21,7 @@
   @apply relative shrink-0 rounded-full overflow-hidden;
   width: 48px;
   height: 48px;
-  background-color: #f3f4f6; /* gray-100 */
+  background-color: #f3f4f6;
 }
 
 .t-avatar--placeholder::after {
@@ -40,17 +40,17 @@
 
 .t-name {
   @apply text-base font-semibold;
-  color: #3b2f2f; /* terre */
+  color: var(--color-dark);
 }
 
 .t-meta {
   @apply text-sm;
-  color: #6b7280; /* gray-500 */
+  color: var(--color-secondary);
 }
 
 .t-date {
   @apply text-xs;
-  color: #9ca3af; /* gray-400 */
+  color: var(--color-secondary);
 }
 
 /* rating */
@@ -59,14 +59,14 @@
 }
 .t-star {
   @apply w-5 h-5;
-  color: #d1d5db; /* base empty */
+  color: var(--color-bg);
 }
 .t-star--full {
-  color: #d8973c; /* ocre */
+  color: var(--color-primary);
 }
 /* demi-étoile: on colore, puis on masque moitié droite */
 .t-star--half {
-  color: #d8973c;
+  color: #fccfb2;
   position: relative;
   overflow: hidden;
 }
@@ -81,7 +81,7 @@
 /* citation */
 .t-quote {
   @apply relative;
-  color: #1f2937; /* gray-800 */
+  color: var(--color-dark); /* gray-800 */
 }
 .t-quote p {
   @apply text-sm;
@@ -95,7 +95,7 @@
   top: -0.75rem;
   font-size: 2rem;
   line-height: 1;
-  color: #7a9e7e; /* vert */
+  color: var(--color-dark); /* vert */
   opacity: 0.25;
 }
 
@@ -108,7 +108,7 @@
 
 /* focus & a11y */
 .t-card:focus-within {
-  outline: 2px solid #2563eb; /* blue-600 */
+  outline: 2px solid var(--color-dark); /* blue-600 */
   outline-offset: 2px;
   border-radius: 0.75rem;
 }
