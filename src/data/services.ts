@@ -1,43 +1,36 @@
 // src/data/services.ts
 
 import type { FeatureItem } from '@/components/section/FeaturesGrid';
-import { Home, Users, Sparkles, FileText, Moon, Handshake } from 'lucide-react';
+import { FileText, BrushCleaning, Utensils, UserCheck, Handshake } from 'lucide-react';
 
 export const services: ReadonlyArray<FeatureItem> = [
   {
-    icon: Home,
-    title: 'Service 1',
+    icon: BrushCleaning,
+    title: 'Aide-ménagère',
     description:
-      'Description générique du premier service. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      'Un intérieur propre et agréable grâce à notre aide au ménage et à la gestion du linge.',
   },
   {
-    icon: Users,
-    title: 'Service 2',
+    icon: Utensils,
+    title: 'Aide aux repas',
     description:
-      'Description générique du deuxième service. Integer nec odio. Praesent libero. Sed cursus ante dapibus.',
+      'Un accompagnement pour la préparation, la prise et la surveillance des repas, adapté aux besoins nutritionnels de chacun.',
   },
   {
-    icon: Sparkles,
-    title: 'Service 3',
+    icon: UserCheck,
+    title: 'Aide à l’autonomie',
     description:
-      'Description générique du troisième service. Nulla quis sem at nibh elementum imperdiet.',
+      'Un accompagnement adapté pour préserver votre indépendance et votre sécurité au quotidien.',
   },
   {
     icon: FileText,
-    title: 'Service 4',
+    title: 'Aide administrative',
     description:
-      'Description générique du quatrième service. Duis sagittis ipsum. Praesent mauris.',
-  },
-  {
-    icon: Moon,
-    title: 'Service 5',
-    description:
-      'Description générique du cinquième service. Fusce nec tellus sed augue semper porta.',
+      'Un soutien dans vos démarches administratives, la gestion de vos documents et vos rendez-vous importants.',
   },
   {
     icon: Handshake,
-    title: 'Service 6',
-    description:
-      'Description générique du sixième service. Mauris massa. Vestibulum lacinia arcu eget nulla.',
+    title: 'Compagnie et soutien',
+    description: 'Rompre la solitude avec des moments d’échange, d’écoute et de convivialité.',
   },
 ] as const;
