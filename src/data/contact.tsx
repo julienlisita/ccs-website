@@ -9,7 +9,7 @@ export const contactInfos: ReadonlyArray<FeatureItem> = [
     title: 'Téléphone',
     description: (
       <a href="tel:+33612345678" className="underline hover:no-underline">
-        +33 6 12 34 56 78
+        06 12 57 52 42
       </a>
     ),
   },
@@ -17,8 +17,8 @@ export const contactInfos: ReadonlyArray<FeatureItem> = [
     icon: Mail,
     title: 'Email',
     description: (
-      <a href="mailto:contact@company-care.fr" className="underline hover:no-underline">
-        contact@company-care.fr
+      <a href="mailto:contact.ccs@ccs.com" className="underline hover:no-underline">
+        contact.ccs@ccs.com
       </a>
     ),
   },
@@ -27,12 +27,12 @@ export const contactInfos: ReadonlyArray<FeatureItem> = [
     title: 'Adresse',
     description: (
       <a
-        href="https://www.google.com/maps/search/?api=1&query=12 rue Exemple, 75000 Paris"
+        href="https://maps.app.goo.gl/jEaYBxjJpJS6SqQH7"
         target="_blank"
         rel="noopener noreferrer"
         className="underline hover:no-underline"
       >
-        12 rue Exemple, 75000 Paris
+        Résidence Mosaïque Bât 3 - 86 Avenue Léon Blum 33110 Le Bouscat
       </a>
     ),
   },
