@@ -21,6 +21,8 @@ export type FeatureItem = {
     | React.ReactElement<React.SVGProps<SVGSVGElement>>;
   title: string;
   description: string | React.ReactNode;
+  href?: string;
+  linkLabel?: string;
 };
 
 type BaseProps = {
