@@ -11,30 +11,19 @@ import SectionTitle from '../ui/SectionTitle';
 import Subtitle from '../ui/Subtitle';
 
 type SplitSectionProps = {
-  /** Eyebrow (petit label au-dessus du titre) */
   eyebrow?: string;
-  /** Titre principal */
   title: string;
-  /** Sous-titre (optionnel) */
   subtitle?: string;
-  /** Texte / contenu principal (string ou ReactNode) */
   content?: React.ReactNode;
-  /** Image */
   imageSrc: string;
   imageAlt: string;
-  /** Inverser image/texte sur desktop */
   reverse?: boolean;
-  /** CTA principal (optionnel) */
   ctaLabel?: string;
   ctaHref?: string;
-  /** CTA secondaire (optionnel) */
   secondaryCtaLabel?: string;
   secondaryCtaHref?: string;
-  /** Tonalité visuelle (déclinable en CSS) */
   tone?: 'default' | 'muted' | 'brand';
-  /** Classe additionnelle */
   className?: string;
-  /** Slot libre (ex: liste à puces) */
   children?: React.ReactNode;
 };
 
@@ -58,14 +47,14 @@ export default function SplitSection({
     <Section className={clsx('split', `split--${tone}`, className)}>
       <SectionWrapper>
         <div className={clsx('split__grid', reverse && 'is-reverse')}>
-          {/* MEDIA */}
+          {/* IMAGE */}
           <div className="split__media">
             <div className="split__img-wrap">
               <Image
                 src={imageSrc}
                 alt={imageAlt}
                 fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="split__img"
                 priority
               />
@@ -75,7 +64,7 @@ export default function SplitSection({
           {/* TEXTE */}
           <div className="split__body">
             {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
-            {title && <SectionTitle>{title}</SectionTitle>}
+            {title && <SectionTitle align="left">{title}</SectionTitle>}
             {subtitle && <Subtitle>{subtitle}</Subtitle>}
             {content && <div className="split__text">{content}</div>}
             {children && <div className="split__extra">{children}</div>}
