@@ -67,16 +67,15 @@ export default function Split({
   const renderIcon = () => {
     if (!icon) return null;
 
-    const baseIcon =
-      React.isValidElement(icon)
-        ? React.cloneElement(icon as React.ReactElement<React.SVGProps<SVGSVGElement>>, {
-            className: clsx('w-8 h-8', iconClassName),
-            'aria-hidden': true,
-          })
-        : React.createElement(icon as React.ComponentType<React.SVGProps<SVGSVGElement>>, {
-            className: clsx('w-8 h-8', iconClassName),
-            'aria-hidden': true,
-          });
+    const baseIcon = React.isValidElement(icon)
+      ? React.cloneElement(icon as React.ReactElement<React.SVGProps<SVGSVGElement>>, {
+          className: clsx('w-8 h-8', iconClassName),
+          'aria-hidden': true,
+        })
+      : React.createElement(icon as React.ComponentType<React.SVGProps<SVGSVGElement>>, {
+          className: clsx('w-8 h-8', iconClassName),
+          'aria-hidden': true,
+        });
 
     if (!iconCircle) return baseIcon;
 
