@@ -1,14 +1,17 @@
 // src/components/section/SplitSection.tsx
 
-import Section from '@/components/common/Section';
-import SectionWrapper from '@/components/common/SectionWrapper';
-import Button from '@/components/ui/Button';
+'use client';
+
+import React from 'react';
 import Image from 'next/image';
 import clsx from 'clsx';
-import './SplitSection.css';
-import Eyebrow from '../ui/Eyebrow';
-import SectionTitle from '../ui/SectionTitle';
-import Subtitle from '../ui/Subtitle';
+import Eyebrow from '@/components/ui/Eyebrow';
+import Button from '@/components/ui/Button';
+import '@/components/section/SplitSection.css';
+import Section from '@/components/common/Section';
+import SectionWrapper from '@/components/common/SectionWrapper';
+import SectionTitle from '@/components/ui/SectionTitle';
+import Subtitle from '@/components/ui/Subtitle';
 
 type SplitSectionProps = {
   eyebrow?: string;
@@ -18,6 +21,10 @@ type SplitSectionProps = {
   imageSrc: string;
   imageAlt: string;
   reverse?: boolean;
+  /** Ratio de l'image : square (1/1), landscape (4/3), portrait (3/4) */
+  aspect?: 'square' | 'landscape' | 'portrait';
+  /** Ajustement du contenu de l'image : contain ou cover */
+  imageFit?: 'contain' | 'cover';
   ctaLabel?: string;
   ctaHref?: string;
   secondaryCtaLabel?: string;
@@ -35,6 +42,8 @@ export default function SplitSection({
   imageSrc,
   imageAlt,
   reverse = false,
+  aspect = 'square',
+  imageFit = 'contain',
   ctaLabel,
   ctaHref,
   secondaryCtaLabel,
@@ -49,13 +58,16 @@ export default function SplitSection({
         <div className={clsx('split__grid', reverse && 'is-reverse')}>
           {/* IMAGE */}
           <div className="split__media">
-            <div className="split__img-wrap">
+            <div className={clsx('split__img-wrap', `aspect-${aspect}`)}>
               <Image
                 src={imageSrc}
                 alt={imageAlt}
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
-                className="split__img"
+                className={clsx(
+                  'split__img',
+                  imageFit === 'cover' ? 'object-cover' : 'object-contain'
+                )}
                 priority
               />
             </div>

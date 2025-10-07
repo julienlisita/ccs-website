@@ -14,22 +14,26 @@ type IconType = React.ComponentType<React.SVGProps<SVGSVGElement>> | React.React
 type SplitProps = {
   as?: 'div' | 'article';
 
-  /** --- Nouveau : icône en tête de bloc texte --- */
+  /** Icône en tête du bloc texte (optionnelle) */
   icon?: IconType;
-  /** Classe utilitaire pour styliser l’icône (taille, couleur, fond…) */
   iconClassName?: string;
-  /** Si true, icône dans un médaillon rond */
   iconCircle?: boolean;
 
   eyebrow?: string;
-  title?: string;
+  title: string;
   titleLevel?: 2 | 3 | 4 | 5 | 6;
   subtitle?: string;
   content?: React.ReactNode;
   children?: React.ReactNode;
 
+  /** IMAGE */
   imageSrc: string;
   imageAlt: string;
+  /** Ratio visuel */
+  aspect?: 'square' | 'landscape' | 'portrait'; // 1/1, 4/3, 3/4
+  /** Ajustement contenu image */
+  imageFit?: 'contain' | 'cover';
+
   reverse?: boolean;
 
   ctaLabel?: string;
@@ -51,19 +55,24 @@ export default function Split({
   subtitle,
   content,
   children,
+
   imageSrc,
   imageAlt,
+  aspect = 'square',
+  imageFit = 'contain',
+
   reverse = false,
+
   ctaLabel,
   ctaHref,
   secondaryCtaLabel,
   secondaryCtaHref,
+
   className,
 }: SplitProps) {
   const Tag = as;
   const TitleTag = `h${titleLevel}` as keyof React.JSX.IntrinsicElements;
 
-  /** Rendu de l’icône */
   const renderIcon = () => {
     if (!icon) return null;
 
@@ -79,12 +88,10 @@ export default function Split({
 
     if (!iconCircle) return baseIcon;
 
-    // Médaillon rond derrière l’icône
     return (
       <span
         className={clsx(
-          'inline-flex items-center justify-center rounded-full',
-          'w-12 h-12',
+          'inline-flex items-center justify-center rounded-full w-12 h-12',
           'bg-[var(--color-bg)] text-[var(--color-primary)]'
         )}
         aria-hidden
@@ -97,15 +104,18 @@ export default function Split({
   return (
     <Tag className={clsx('split', className)}>
       <div className={clsx('split__grid', reverse && 'is-reverse')}>
-        {/* MEDIA */}
+        {/* MEDIA (toujours présent) */}
         <div className="split__media">
-          <div className="split__img-wrap">
+          <div className={clsx('split__img-wrap', `aspect-${aspect}`)}>
             <Image
               src={imageSrc}
               alt={imageAlt}
               fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="split__img"
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className={clsx(
+                'split__img',
+                imageFit === 'cover' ? 'object-cover' : 'object-contain'
+              )}
               priority
             />
           </div>
@@ -113,16 +123,12 @@ export default function Split({
 
         {/* TEXTE */}
         <div className="split__body">
-          {/* Icône au tout début du bloc texte */}
           {icon && <div className="mb-3">{renderIcon()}</div>}
-
           {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
 
-          {title && (
-            <TitleTag className="text-xl sm:text-2xl lg:text-3xl font-semibold leading-snug text-[var(--color-dark)]">
-              {title}
-            </TitleTag>
-          )}
+          <TitleTag className="text-xl sm:text-2xl lg:text-3xl font-semibold leading-snug text-[var(--color-dark)]">
+            {title}
+          </TitleTag>
 
           {subtitle && (
             <p className="mt-2 text-base sm:text-lg text-[color:var(--color-dark)]/80">
