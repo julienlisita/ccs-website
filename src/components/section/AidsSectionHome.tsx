@@ -12,6 +12,7 @@ export default function AidsSectionHome() {
       imageAlt=""
       ctaLabel="En savoir plus"
       ctaHref="/aides"
+      tone="muted"
       reverse
     />
   );
