@@ -16,7 +16,7 @@ export default function ServicesSection({ className }: Props) {
   return (
     <Section>
       <SectionWrapper>
-        <SectionTitle align="left">Nos Prestations</SectionTitle>
+        <SectionTitle className="text-center md:text-left">Nos Prestations</SectionTitle>
         <div className="mt-10 space-y-16">
           <Split
             icon={<BrushCleaning />}
