@@ -11,9 +11,9 @@
 }
 
 .split.split--muted {
-  background-color: #faf8f3;
-  border-top: 2px solid var(--color-terre);
-  border-bottom: 2px solid var(--color-terre);
+  background-color: var(--color-cream);
+  border-top: 2px solid transparent;
+  border-bottom: 2px solidtransparent;
 }
 
 .split.split--brand {
