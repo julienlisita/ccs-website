@@ -30,9 +30,12 @@ export default function LocationSection({ className, align = 'center' }: Props) 
       <SectionWrapper>
         {/* Header */}
         <div className={clsx('space-y-3', alignText)}>
-          <Eyebrow align={align}>Nos implantations</Eyebrow>
-          <SectionTitle align={align}>Présents en Gironde et en Charente</SectionTitle>
-          <Subtitle>Retrouvez nos antennes locales pour un accompagnement de proximité.</Subtitle>
+          <Eyebrow>NOTRE ZONE D’INTERVENTION </Eyebrow>
+          <SectionTitle>Présents en Charente et en Gironde</SectionTitle>
+          <Subtitle>
+            Nous intervenons principalement dans ces deux départements. Contactez-nous pour vérifier
+            la disponibilité de nos services dans votre secteur.
+          </Subtitle>
         </div>
 
         {/* Cartes */}
@@ -52,7 +55,7 @@ export default function LocationSection({ className, align = 'center' }: Props) 
                 loading="lazy"
               ></iframe>
             </div>
-            <h3 className="text-lg font-semibold text-[var(--color-dark)]">Agence Gironde</h3>
+            <h3 className="text-lg font-semibold text-[var(--color-dark)]">Gironde</h3>
           </div>
 
           {/* Carte Charente */}
@@ -68,7 +71,7 @@ export default function LocationSection({ className, align = 'center' }: Props) 
                 loading="lazy"
               ></iframe>
             </div>
-            <h3 className="text-lg font-semibold text-[var(--color-dark)]">Agence Charente</h3>
+            <h3 className="text-lg font-semibold text-[var(--color-dark)]">Charente</h3>
           </div>
         </div>
       </SectionWrapper>
