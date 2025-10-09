@@ -11,7 +11,7 @@
 }
 
 .split.split--muted {
-  background-color: #faf8f3;
+  background-color: var(--color-cream);
   border-top: 2px solid var(--color-terre);
   border-bottom: 2px solid var(--color-terre);
 }
