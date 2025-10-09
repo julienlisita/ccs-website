@@ -2,7 +2,7 @@
 
 .contact-form-section {
   /* Fond doux optionnel */
-  background-color: var(--color-bg);
+  /* background-color: var(--color-bg); */
 }
 
 /* Zone “aside” (facultative) : texte, infos RGPD, horaires, coordonnées compactes… */

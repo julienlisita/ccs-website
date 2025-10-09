@@ -4,6 +4,7 @@ import HeroIntro from '../section/HeroIntro';
 import { Mail } from 'lucide-react';
 import ContactInfoSection from '../section/ContactInfoSection';
 import ContactFormSection from '../section/ContactFormSection';
+import LocationSection from '../section/LocationSection';
 
 export default function Contact() {
   return (
@@ -21,6 +22,7 @@ export default function Contact() {
         align="left"
       />
       <ContactInfoSection />
+      <LocationSection align="left" />
     </div>
   );
 }
