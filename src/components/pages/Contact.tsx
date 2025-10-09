@@ -14,6 +14,8 @@ export default function Contact() {
         title="Contactez-nous"
         subtitle="Besoin d’informations ou d’un devis ? Nous sommes à votre écoute."
         align="center"
+        backgroundImage="/images/hero/contact-bg.avif"
+        overlayOpacity={0.4}
       />
       <ContactFormSection
         eyebrow="Contact"

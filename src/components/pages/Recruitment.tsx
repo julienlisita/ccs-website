@@ -15,6 +15,8 @@ export default async function Recruitment() {
         title="Recrutement"
         subtitle="Découvrez nos opportunités et rejoignez notre équipe."
         align="center"
+        backgroundImage="/images/hero/recruitment-bg.avif"
+        overlayOpacity={0.4}
       />
       <JobOffersSectionServer />
       <Suspense fallback={<div>Chargement…</div>}>

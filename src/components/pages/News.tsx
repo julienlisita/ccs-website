@@ -13,6 +13,8 @@ export default function NewsPageView() {
         title="Actualités"
         subtitle="Retrouvez les dernières nouvelles, articles et mises à jour."
         align="center"
+        backgroundImage="/images/hero/news-bg.avif"
+        overlayOpacity={0.4}
       />
       <NewsSectionServer />
       <Cta

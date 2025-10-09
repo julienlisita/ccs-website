@@ -15,6 +15,8 @@ export default function TestimonialsPageView() {
         title="Témoignages"
         subtitle="Ils partagent leur expérience et leur avis sur nos services."
         align="center"
+        backgroundImage="/images/hero/testimonials-bg.avif"
+        overlayOpacity={0.4}
       />
       <TestimonialsSectionServer />
       <Cta

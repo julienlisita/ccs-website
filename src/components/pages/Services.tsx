@@ -15,6 +15,8 @@ export default function ServicesFeatures() {
         title="Nos services"
         subtitle="Un aperçu clair et détaillé de ce que nous proposons."
         align="center"
+        backgroundImage="/images/hero/services-bg.avif"
+        overlayOpacity={0.4}
       />
       <ServicesSection />
       <Cta

@@ -17,12 +17,13 @@ export default function About() {
         title="Qui sommes-nous ?"
         subtitle="Découvrez notre équipe, nos valeurs et notre vision."
         align="center"
+        backgroundImage="/images/hero/about-bg.avif"
       />
       {/* 1) Intro texte seul (titre de page) */}
       <Section>
         <SectionWrapper>
           <SectionTitle className="text-center sm:text-left">Présentation</SectionTitle>
-          <p className=" font-bold text-center sm:text-left text-base sm:text-lg text-dark mt-4">
+          <p className="text-center sm:text-left text-base sm:text-lg text-dark mt-4">
             Bienvenue dans notre agence d'aide à la personne, où notre mission est de vous offrir un
             accompagnement personnalisé et de qualité pour améliorer votre quotidien. Fondée par des
             passionnés du bien-être et de l'autonomie, notre équipe se consacre à soutenir les
