@@ -17,8 +17,8 @@ export const contactInfos: ReadonlyArray<FeatureItem> = [
     icon: Mail,
     title: 'Email',
     description: (
-      <a href="mailto:contact.ccs@ccs.com" className="underline hover:no-underline">
-        contact.ccs@ccs.com
+      <a href="mailto:contact@careetservices.pro" className="underline hover:no-underline">
+        contact@careetservices.pro
       </a>
     ),
   },
@@ -32,7 +32,7 @@ export const contactInfos: ReadonlyArray<FeatureItem> = [
         rel="noopener noreferrer"
         className="underline hover:no-underline"
       >
-        Résidence Mosaïque Bât 3 - 86 Avenue Léon Blum 33110 Le Bouscat
+        5 rue fenélon, 33000 Bordeaux
       </a>
     ),
   },
