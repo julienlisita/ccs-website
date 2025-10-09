@@ -2,19 +2,39 @@
 
 /* Thème (couleurs) */
 .hero-intro {
-  background-color: var(--color-bg);
-  color: var(--color-dark);
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-dark);
+  color: white;
 }
 
-/* Layout & responsive via Tailwind (@apply) */
+/* Image de fond */
+.hero-intro__bg {
+  @apply absolute inset-0;
+  z-index: 0;
+}
+
+.hero-intro__bg-image {
+  @apply object-cover object-center;
+  filter: brightness(0.9);
+}
+
+/* Overlay sombre ou coloré */
+.hero-intro__overlay {
+  @apply absolute inset-0 bg-black;
+  pointer-events: none;
+}
+
+/* Contenu principal */
 .hero-intro__inner {
-  @apply container mx-auto px-4;
+  @apply relative container mx-auto px-4;
   @apply flex flex-col space-y-4;
   @apply py-12 sm:py-16 lg:py-20;
-  @apply items-center; /* mobile: centré */
+  @apply items-center; /* mobile centré */
+  z-index: 10;
 }
 
-/* Alignements desktop selon le modificateur */
+/* Alignements desktop selon modificateur */
 .hero-intro.is-left .hero-intro__inner {
   @apply lg:items-start;
 }
@@ -27,7 +47,6 @@
   color: currentColor;
 }
 
-/* Mobile centré par défaut, desktop selon modificateur */
 .hero-intro__title {
   @apply text-center;
 }

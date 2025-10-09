@@ -6,12 +6,15 @@ import PageTitle from '@/components/ui/PageTitle';
 import clsx from 'clsx';
 import type { ReactNode } from 'react';
 import './HeroIntro.css';
+import Image from 'next/image';
 
 type HeroIntroProps = {
   title: string;
   subtitle?: string;
   align?: 'left' | 'center' | 'right';
   icon?: ReactNode;
+  backgroundImage?: string;
+  overlayOpacity?: number;
   className?: string;
 };
 
@@ -20,6 +23,8 @@ export default function HeroIntro({
   subtitle,
   align = 'center',
   icon,
+  backgroundImage,
+  overlayOpacity = 0.4,
   className = '',
 }: HeroIntroProps) {
   return (
@@ -30,7 +35,20 @@ export default function HeroIntro({
         'is-right': align === 'right',
       })}
     >
-      <div className="hero-intro__inner">
+      {backgroundImage && (
+        <div className="hero-intro__bg">
+          <Image
+            src={backgroundImage}
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="hero-intro__bg-image"
+          />
+          <div className="hero-intro__overlay" style={{ opacity: overlayOpacity }} />
+        </div>
+      )}
+      <div className="hero-intro__inner relative z-10">
         {icon && (
           <div className="hero-intro__icon" aria-hidden="true">
             {icon}
