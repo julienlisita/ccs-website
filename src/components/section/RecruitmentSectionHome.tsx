@@ -1,0 +1,22 @@
+// src/components/section/RecruitmentSectionHome.tsx
+
+'use client';
+
+import SplitSection from '@/components/section/SplitSection';
+
+export default function RecruitmentSectionHome() {
+  return (
+    <SplitSection
+      eyebrow="Recrutement"
+      title="Rejoignez notre équipe chaleureuse"
+      subtitle="Nous recherchons des personnes passionnées pour aider nos aînés et personnes en situation de handicap."
+      imageSrc="/images/recruitment-preview.avif"
+      imageAlt="Illustration recrutement"
+      ctaLabel="Voir les offres"
+      ctaHref="/recruitment"
+      tone="muted"
+      aspect="square"
+      imageFit="contain"
+    />
+  );
+}
