@@ -98,7 +98,7 @@ export default function About() {
       </Section>
       <ValuesSection />
       <Cta
-        title="Envie d’échanger avec nous ?"
+        title="Envie d’en savoir plus sur nos services ?"
         description="Notre équipe est disponible pour répondre à vos questions et discuter de vos besoins."
         align="left"
         primaryLabel="Nous contacter"

@@ -23,8 +23,8 @@ export default async function Recruitment() {
         <RecruitmentClient />;
       </Suspense>
       <Cta
-        title="Rejoignez notre équipe"
-        description="Vous partagez nos valeurs ? Découvrez nos opportunités et contactez-nous pour postuler."
+        title="Une question sur le recrutement ?"
+        description="Notre équipe est à votre écoute pour vous renseigner."
         align="left"
         primaryLabel="Nous contacter"
         primaryHref="/contact"

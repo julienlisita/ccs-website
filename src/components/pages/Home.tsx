@@ -18,8 +18,8 @@ export default function Home() {
       <NewsSectionHomeServer />
       <RecruitmentSectionHome />
       <Cta
-        title="Prêt à en savoir plus ?"
-        description="Contactez-nous dès aujourd’hui pour découvrir comment nous pouvons vous accompagner."
+        title="Besoin d’un accompagnement au quotidien ?"
+        description="Nous sommes à vos côtés en Charente et en Gironde."
         align="left"
         primaryLabel="Nous contacter"
         primaryHref="/contact"

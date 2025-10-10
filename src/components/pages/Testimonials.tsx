@@ -20,8 +20,8 @@ export default function TestimonialsPageView() {
       />
       <TestimonialsSectionServer />
       <Cta
-        title="Faites partie de nos clients satisfaits"
-        description="Rejoignez ceux qui nous font déjà confiance. Contactez-nous pour commencer l’aventure."
+        title="Prêts à écrire votre propre témoignage ?"
+        description="Bénéficiez, vous aussi, d’un accompagnement humain et attentif au quotidien."
         align="left"
         primaryLabel="Nous contacter"
         primaryHref="/contact"

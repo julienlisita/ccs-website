@@ -18,8 +18,8 @@ export default function Aids() {
       />
       <AidsSection />
       <Cta
-        title="Prêt à en savoir plus ?"
-        description="Contactez-nous dès aujourd’hui pour découvrir comment nous pouvons vous accompagner."
+        title="Vous avez droit à des aides pour financer vos services."
+        description="Nous vous accompagnons dans vos démarches."
         align="left"
         primaryLabel="Nous contacter"
         primaryHref="/contact"

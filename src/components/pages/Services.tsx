@@ -20,8 +20,8 @@ export default function ServicesFeatures() {
       />
       <ServicesSection />
       <Cta
-        title="Bénéficiez de nos services"
-        description="Nos experts sont prêts à vous accompagner. Discutons ensemble de votre projet."
+        title="Un service adapté à vos besoins."
+        description="Contactez-nous pour créer ensemble un accompagnement personnalisé."
         align="left"
         primaryLabel="Nous contacter"
         primaryHref="/contact"
