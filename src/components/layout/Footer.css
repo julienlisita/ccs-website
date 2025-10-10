@@ -16,7 +16,7 @@
 
 .footer-links {
   @apply font-bold text-sm 
-         flex flex-col sm:flex-row items-center 
+         flex flex-col sm:flex-row justify-center items-center 
          space-y-1 sm:space-y-0 sm:space-x-4 
          text-center mb-2;
 }

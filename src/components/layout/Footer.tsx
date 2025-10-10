@@ -26,10 +26,10 @@ export default function Footer() {
         <nav className="footer-links">
           <Link href="/legal/imprint">Mentions légales</Link>
           <Link href="/legal/privacy">Politique de confidentialité</Link>
-          <Link href="/legal/term">Conditions d'utilisation</Link>
-          <Link href="/faq">FAQ</Link>
         </nav>
-        <p className="footer-copy">© 2025 Nom d'entreprise – Activité</p>
+        <p className="footer-copy">
+          © 2025 Compagnie Care & Services – Entreprise d’aide à domicile
+        </p>
       </div>
 
       {/* Réseaux sociaux */}
