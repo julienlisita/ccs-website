@@ -1,16 +1,18 @@
-import PageTitle from '@/components/ui/PageTitle';
-import { Link } from 'lucide-react';
+// src/app/not-found.tsx
+
+import Button from '@/components/ui/Button';
 
 export default function NotFound() {
   return (
-    <main className="flex flex-col items-center justify-center text-center p-8">
-      <PageTitle>Page non trouvée</PageTitle>
-      <p className="text-gray-600 mb-6 mt-4">
-        La page que vous cherchez n’existe pas ou a été déplacée.
+    <main className="min-h-[70vh] flex flex-col items-center justify-center text-center px-6">
+      <h1 className="text-6xl font-bold text-[#BA805B] mb-4">404</h1>
+      <h2 className="text-2xl font-semibold text-[#785F49] mb-2">Page introuvable</h2>
+      <p className="text-[#785F49]/80 max-w-lg mb-8">
+        Désolé, la page que vous recherchez n’existe pas ou a été déplacée. Retournez à l’accueil
+        pour poursuivre votre navigation.
       </p>
-      <Link href="/" className="text-blue-600 hover:underline">
-        Retour à l’accueil
-      </Link>
+
+      <Button href="/">Retour à l'accueil</Button>
     </main>
   );
 }
