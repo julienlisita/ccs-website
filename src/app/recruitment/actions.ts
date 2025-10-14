@@ -57,5 +57,5 @@ export async function sendApplication(jobTitle: string, formData: FormData): Pro
     attachments,
   });
 
-  redirect('/merci-recruitment');
+  redirect('/thank-you-application');
 }
