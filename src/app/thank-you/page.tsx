@@ -1,4 +1,4 @@
-// src/app/merci/page.tsx
+// src/app/thank-you/page.tsx
 
 import Button from '@/components/ui/Button';
 
@@ -6,7 +6,7 @@ export const metadata = {
   title: 'Message envoyé – Compagnie Care & Services',
 };
 
-export default function MerciPage() {
+export default function ThankYouPage() {
   return (
     <main className="min-h-[60vh] flex flex-col items-center justify-center text-center px-6">
       <h1 className="text-3xl font-semibold text-[#785F49] mb-4">Merci pour votre message !</h1>
