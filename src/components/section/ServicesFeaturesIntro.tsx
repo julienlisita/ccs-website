@@ -18,8 +18,6 @@ export default function ServicesFeatures({ className }: Props) {
       items={services.slice(0, 3)}
       ctaLabel="En savoir plus"
       ctaHref="/services"
-      secondaryCtaLabel="Nous contacter"
-      secondaryCtaHref="/contact"
       align="left"
       className={className}
     />
