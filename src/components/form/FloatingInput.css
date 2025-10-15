@@ -8,13 +8,13 @@
   @apply block w-full text-sm rounded-md appearance-none transition px-3 pb-2.5 pt-4;
 
   background-color: white;
-  color: black;
-  border: 1px solid #3a3a3a;
+  color: var(--color-dark);
+  border: 1px solid var(--color-secondary);
 }
 
 .floating-input:focus {
   outline: none;
-  border-color: #5ac8fa;
+  border-color: var(--color-primary);
 }
 
 .floating-input-label {
@@ -22,7 +22,7 @@
   top: 0.5rem;
   left: 0.75rem;
   font-size: 0.875rem; /* text-sm */
-  color: #4b5563; /* gray-600 */
+  color: var(--color-dark);
   z-index: 10;
   transform-origin: 0;
   transform: translateY(1rem) scale(1);
