@@ -11,7 +11,7 @@ export default function AidsSectionHome() {
       imageSrc="/images/aides-illu.png"
       imageAlt=""
       ctaLabel="En savoir plus"
-      ctaHref="/aides"
+      ctaHref="/aids"
       tone="muted"
       reverse
     />
