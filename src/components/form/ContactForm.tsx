@@ -7,6 +7,7 @@ import FloatingInput from '../form/FloatingInput';
 import FloatingTextarea from '../form/FloatingTextarea';
 import { sendContact } from '@/app/contact/actions';
 import './ContactForm.css';
+import Radio from './Radio';
 
 type ContactFormProps = {
   /** Alignement du bouton CTA (appliqué à partir de lg) */
@@ -30,19 +31,11 @@ export default function ContactForm({ ctaAlign = 'left', className }: ContactFor
 
       {/* Civilité */}
       <div className="mb-4">
-        <label className="sr-only" htmlFor="civilite">
-          Civilité
-        </label>
-        <select
-          id="civilite"
-          name="civilite"
-          className="w-full rounded-lg border border-[#92A095] bg-white px-4 py-2 text-[#785F49] placeholder-[#785F49]/70 focus:border-[#BA805B] focus:ring-1 focus:ring-[#BA805B]/50"
-          defaultValue=""
-        >
-          <option value="">Civilité</option>
-          <option value="Mme">Mme</option>
-          <option value="M.">M.</option>
-        </select>
+        <span className="block text-[#785F49] mb-2 font-medium">Civilité</span>
+        <div className="flex flex-wrap gap-6">
+          <Radio name="civilite" value="Mme" label="Mme" />
+          <Radio name="civilite" value="M." label="M." />
+        </div>
       </div>
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">

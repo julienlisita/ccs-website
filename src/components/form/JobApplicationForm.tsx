@@ -8,6 +8,7 @@ import FloatingTextarea from './FloatingTextarea';
 import Button from '../ui/Button';
 import { sendApplication } from '@/app/recruitment/actions';
 import './JobApplicationForm.css';
+import Radio from './Radio';
 
 type JobApplicationFormProps = {
   jobTitle: string;
@@ -31,19 +32,11 @@ export default function JobApplicationForm({ jobTitle }: JobApplicationFormProps
 
       {/* Civilité */}
       <div className="mb-4">
-        <label className="sr-only" htmlFor="civilite">
-          Civilité
-        </label>
-        <select
-          id="civilite"
-          name="civilite"
-          className="w-full rounded-lg border border-[#92A095] bg-white px-4 py-2 text-[#785F49] placeholder-[#785F49]/70 focus:border-[#BA805B] focus:ring-1 focus:ring-[#BA805B]/50"
-          defaultValue=""
-        >
-          <option value="">Civilité</option>
-          <option value="Mme">Mme</option>
-          <option value="M.">M.</option>
-        </select>
+        <span className="block text-[#785F49] mb-2 font-medium">Civilité</span>
+        <div className="flex flex-wrap gap-6">
+          <Radio name="civilite" value="Mme" label="Mme" />
+          <Radio name="civilite" value="M." label="M." />
+        </div>
       </div>
 
       {/* Prénom + Nom */}
@@ -60,18 +53,37 @@ export default function JobApplicationForm({ jobTitle }: JobApplicationFormProps
 
       {/* CV */}
       <div className="file-upload mt-4">
-        <label htmlFor="cv" className="file-label">
+        <label htmlFor="cv" className="block text-[#785F49]  font-medium">
           Joindre un CV
         </label>
-        <input
-          type="file"
-          id="cv"
-          name="cv"
-          accept=".pdf,.doc,.docx"
-          onChange={handleFileChange}
-          className="file-input"
-        />
-        {fileName && <p className="file-name">Fichier sélectionné : {fileName}</p>}
+
+        <div className="relative">
+          <Button variant="secondary">
+            <label htmlFor="cv" className="cursor-pointer">
+              Sélectionner un fichier{' '}
+              <span className="ml-2" aria-hidden="true">
+                &rsaquo;
+              </span>
+            </label>
+          </Button>
+
+          {/* Input masqué */}
+          <input
+            type="file"
+            id="cv"
+            name="cv"
+            accept=".pdf,.doc,.docx"
+            onChange={handleFileChange}
+            className="hidden"
+          />
+        </div>
+
+        {/* Nom du fichier affiché */}
+        {fileName && (
+          <p className="file-name mt-2 text-sm text-[#785F49] italic">
+            Fichier sélectionné : {fileName}
+          </p>
+        )}
       </div>
 
       {/* Bouton d’envoi */}
