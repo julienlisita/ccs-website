@@ -14,9 +14,7 @@
     border-color 0.3s;
 }
 .btn.primary:hover {
-  background-color: white;
-  color: var(--color-primary);
-  border-color: var(--color-primary);
+  background-color: #a3704f;
 }
 
 .btn.secondary {
@@ -27,7 +25,7 @@
 }
 .btn.secondary:hover {
   background-color: transparent;
-  color: var(--color-secondary);
+  color: #a3704f;
   border: none;
 }
 
