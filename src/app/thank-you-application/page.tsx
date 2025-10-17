@@ -4,6 +4,11 @@ import Button from '@/components/ui/Button';
 
 export const metadata = {
   title: 'Candidature envoyée – Compagnie Care & Services',
+  description:
+    'Merci pour votre candidature ! Votre profil a bien été transmis à notre équipe RH. Nous vous contacterons si votre profil correspond à nos besoins actuels.',
+  alternates: {
+    canonical: 'https://careetservices.pro/thank-you-application',
+  },
 };
 
 export default function ThankYouApplicationPage() {

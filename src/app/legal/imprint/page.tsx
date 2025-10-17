@@ -3,11 +3,11 @@
 import Imprint from '@/components/pages/legal/Imprint';
 
 export const metadata = {
-  title: 'Mentions légales – Nom entreprise',
+  title: 'Mentions légales – Compagnie Care & Services',
   description:
-    'Informations légales concernant l’éditeur du site, l’hébergement et la propriété intellectuelle.',
+    'Mentions légales du site Compagnie Care & Services : informations sur l’éditeur, l’hébergeur et les conditions d’utilisation du site.',
   alternates: {
-    canonical: 'https://www.exemple.com/legal/imprint',
+    canonical: 'https://careetservices.pro/legal/imprint',
   },
 };
 

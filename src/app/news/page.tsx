@@ -3,11 +3,11 @@
 import News from '@/components/pages/News';
 
 export const metadata = {
-  title: 'Actualités',
+  title: 'Actualités - Compagnie Care & Services',
   description:
-    'Actualités ou publications de l’entreprise. Cette page peut contenir des articles internes, des liens externes, ou évoluer vers un blog complet.',
+    'Suivez les actualités et les conseils de Compagnie Care & Services : informations sur le secteur de l’aide à domicile, événements et initiatives locales.',
   alternates: {
-    canonical: 'https://www.exemple.com/news',
+    canonical: 'https://careetservices.pro/news',
   },
 };
 

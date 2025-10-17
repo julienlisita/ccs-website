@@ -4,6 +4,11 @@ import Button from '@/components/ui/Button';
 
 export const metadata = {
   title: 'Message envoyé – Compagnie Care & Services',
+  description:
+    'Votre message a bien été envoyé à Compagnie Care & Services. Notre équipe vous répondra dans les plus brefs délais.',
+  alternates: {
+    canonical: 'https://careetservices.pro/thank-you',
+  },
 };
 
 export default function ThankYouPage() {

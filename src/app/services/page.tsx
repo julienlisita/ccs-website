@@ -3,11 +3,11 @@
 import Services from '@/components/pages/Services';
 
 export const metadata = {
-  title: 'Services – Nom entreprise',
+  title: 'Services – Compagnie Care & Services',
   description:
-    'Découvrez nos services sur mesure pour professionnels et particuliers : développement web, accompagnement digital, et plus encore.',
+    'Découvrez les services d’aide à domicile de Compagnie Care & Services : entretien du logement, aide à la toilette, préparation des repas, téléassistance et accompagnement quotidien.',
   alternates: {
-    canonical: 'https://www.exemple.com/services',
+    canonical: 'https://careetservices.pro/services',
   },
 };
 

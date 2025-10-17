@@ -3,11 +3,11 @@
 import Privacy from '@/components/pages/legal/Policy';
 
 export const metadata = {
-  title: 'Politique de confidentialité – Nom entreprise',
+  title: 'Politique de confidentialité – Compagnie Care & Services',
   description:
-    'Découvrez comment nous collectons, utilisons et protégeons vos données personnelles.',
+    'Consultez la politique de confidentialité de Compagnie Care & Services : gestion des données personnelles, cookies et droits des utilisateurs.',
   alternates: {
-    canonical: 'https://www.exemple.com/legal/privacy',
+    canonical: 'https://careetservices.pro/legal/privacy',
   },
 };
 

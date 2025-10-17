@@ -3,11 +3,11 @@
 import Home from '@/components/pages/Home';
 
 export const metadata = {
-  title: 'Accueil – Nom entreprise',
+  title: 'Accueil – Compagnie Care & Services',
   description:
-    'Bienvenue sur notre site vitrine. Découvrez nos services et notre expertise au service de votre activité.',
+    'Bienvenue sur le site de Compagnie Care & Services, votre partenaire de confiance pour l’aide à domicile en Charente et en Gironde. Découvrez nos services daccompagnement, d’aide aux personnes âgées et de maintien à domicile.',
   alternates: {
-    canonical: 'https://www.exemple.com/',
+    canonical: 'https://careetservices.pro/',
   },
 };
 

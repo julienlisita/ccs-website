@@ -3,11 +3,11 @@
 import Testimonials from '@/components/pages/Testimonials';
 
 export const metadata = {
-  title: 'Témoignages – Avis de nos clients',
+  title: 'Témoignages – Compagnie Care & Services',
   description:
-    'Lisez les témoignages et retours d’expérience de nos clients satisfaits, preuve de notre engagement et de notre qualité de service.',
+    'Découvrez les témoignages et avis de nos bénéficiaires et de leurs familles. Compagnie Care & Services s’engage chaque jour pour un accompagnement humain et professionnel.',
   alternates: {
-    canonical: 'https://www.exemple.com/testimonials',
+    canonical: 'https://careetservices.pro/testimonials',
   },
 };
 

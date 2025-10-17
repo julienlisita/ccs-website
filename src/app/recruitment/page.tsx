@@ -3,11 +3,11 @@
 import Recruitment from '@/components/pages/Recruitment';
 
 export const metadata = {
-  title: 'Recrutement',
+  title: 'Recrutement – Compagnie Care & Services',
   description:
-    'Page de recrutement avec un formulaire de candidature complet (CV, lettre de motivation, message). Idéal pour les entreprises qui souhaitent recevoir des candidatures en ligne.',
+    'Rejoignez Compagnie Care & Services ! Découvrez nos offres d’emploi et postulez en ligne pour contribuer à un accompagnement humain et professionnel à domicile.',
   alternates: {
-    canonical: 'https://www.exemple.com/recruitment',
+    canonical: 'https://careetservices.pro/recruitment',
   },
 };
 

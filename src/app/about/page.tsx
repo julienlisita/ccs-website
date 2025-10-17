@@ -3,11 +3,11 @@
 import About from '@/components/pages/About';
 
 export const metadata = {
-  title: 'À propos – Votre Nom',
+  title: 'À propos – Compagnie Care & Services',
   description:
-    'En savoir plus sur notre entreprise, nos valeurs, et notre engagement envers nos clients.',
+    'Découvrez l’histoire et les valeurs de Compagnie Care & Services. Une entreprise familiale engagée dans l’accompagnement à domicile des personnes âgées et en situation de handicap, en Charente et Gironde.',
   alternates: {
-    canonical: 'https://www.exemple.com/about',
+    canonical: 'https://careetservices.pro/about',
   },
 };
 

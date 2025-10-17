@@ -3,11 +3,11 @@
 import Contact from '@/components/pages/Contact';
 
 export const metadata = {
-  title: 'Contact – Nom entreprise',
+  title: 'Contact – Compagnie Care & Services',
   description:
-    'Besoin d’informations ou d’un devis ? Contactez-nous via notre formulaire ou par téléphone.',
+    'Contactez Compagnie Care & Services pour toute demande d’information ou de devis concernant nos prestations d’aide à domicile en Charente et Gironde.',
   alternates: {
-    canonical: 'https://www.exemple.com/contact',
+    canonical: 'https://careetservices.pro/contact',
   },
 };
 

@@ -2,6 +2,15 @@
 
 import Button from '@/components/ui/Button';
 
+export const metadata = {
+  title: 'Page introuvable – Compagnie Care & Services',
+  description:
+    'La page que vous recherchez n’existe pas ou a été déplacée. Retournez à l’accueil pour poursuivre votre navigation sur Compagnie Care & Services.',
+  alternates: {
+    canonical: 'https://careetservices.pro/404',
+  },
+};
+
 export default function NotFound() {
   return (
     <main className="min-h-[70vh] flex flex-col items-center justify-center text-center px-6">
