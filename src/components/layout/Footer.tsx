@@ -13,7 +13,7 @@ export default function Footer() {
       {/* Logo */}
       <div className="footer-logo">
         <Image
-          src="/images/logo-ccs.jpg"
+          src="/images/logo-CCS.jpg"
           alt="Logo"
           fill
           sizes="(max-width: 768px) 100px, (max-width: 1024px) 120px, 140px"
