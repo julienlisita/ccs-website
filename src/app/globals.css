@@ -11,14 +11,14 @@
   --color-earth: #785f49; /* Earth/Brown */
 
   /* Functional tokens (used in code) */
-  --color-primary: var(--color-ochre); 
-  --color-secondary: var(--color-green); 
+  --color-primary: var(--color-ochre);
+  --color-secondary: var(--color-green);
   --color-surface: #ffffff;
   --color-border: var(--color-green);
   --color-text: var(--color-earth);
   --color-muted: var(--color-secondary);
-  --color-bg: var(--color-cream); 
-  --color-dark: var(--color-earth); 
+  --color-bg: var(--color-cream);
+  --color-dark: var(--color-earth);
 
   /* Layout tokens */
   --header-height: 56px; /* h-14 */
