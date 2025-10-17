@@ -23,6 +23,12 @@ const TO = 'contact@careetservices.pro';
 export async function sendContact(formData: FormData): Promise<void> {
   'use server';
 
+  // Vérification du honeypot
+  if (formData.get('company')) {
+    console.warn('Spam détecté via le champ honeypot');
+    redirect('/thank-you');
+  }
+
   const data = schema.parse({
     civilite: formData.get('civilite')?.toString(),
     prenom: formData.get('prenom')?.toString(),
@@ -32,10 +38,6 @@ export async function sendContact(formData: FormData): Promise<void> {
     company: formData.get('company')?.toString(),
   });
 
-  if (data.company) {
-    redirect('/contact?sent=1');
-  }
-
   const html = `
     <h3>Nouvelle demande de contact</h3>
     <p><strong>Civilité :</strong> ${data.civilite || '—'}</p>
@@ -43,6 +45,7 @@ export async function sendContact(formData: FormData): Promise<void> {
     <p><strong>Email :</strong> ${data.email}</p>
     <p><strong>Message :</strong><br/>${data.message.replace(/\n/g, '<br/>')}</p>
   `;
+
   await resend.emails.send({
     from: FROM,
     to: TO,
