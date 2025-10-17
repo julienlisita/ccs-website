@@ -17,8 +17,8 @@ const schema = z.object({
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-const FROM = 'Recrutement CCS <no-reply@careetservices.pro>';
-const TO = 'contact@careetservices.pro';
+const FROM = 'Site Template <no-reply@resend.dev>';
+const TO = 'julien.lisita@gmail.com';
 
 async function blobToBase64(file: File) {
   const buffer = Buffer.from(await file.arrayBuffer());
