@@ -30,6 +30,9 @@ export default function JobApplicationForm({ jobTitle }: JobApplicationFormProps
     <form className="job-form" action={formAction}>
       <h2 className="job-form-title">Postuler à : {jobTitle}</h2>
 
+      {/* honeypot anti-spam */}
+      <input type="text" name="company" className="hidden" tabIndex={-1} autoComplete="off" />
+
       {/* Civilité */}
       <div className="mb-4">
         <span className="block text-[#785F49] mb-2 font-medium">Civilité</span>

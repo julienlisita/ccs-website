@@ -12,9 +12,11 @@ const schema = z.object({
   nom: z.string().min(1),
   email: z.string().email(),
   message: z.string().min(5),
+  company: z.string().optional(),
 });
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+
 const FROM = 'Recrutement CCS <no-reply@careetservices.pro>';
 const TO = 'contact@careetservices.pro';
 
@@ -25,6 +27,12 @@ async function blobToBase64(file: File) {
 
 export async function sendApplication(jobTitle: string, formData: FormData): Promise<void> {
   'use server';
+
+  //  Vérification du honeypot AVANT validation
+  if (formData.get('company')) {
+    console.warn('Spam détecté sur le formulaire de recrutement');
+    redirect('/thank-you-application'); // redirection neutre pour le bot
+  }
 
   const data = schema.parse({
     civilite: formData.get('civilite')?.toString(),
