@@ -2,32 +2,44 @@
 
 'use client';
 
-import { useState } from 'react';
+import { useTransition } from 'react';
 import FloatingInput from './FloatingInput';
 import FloatingTextarea from './FloatingTextarea';
 import Button from '../ui/Button';
 import { sendApplication } from '@/app/recruitment/actions';
 import './JobApplicationForm.css';
 import Radio from './Radio';
+import FileUpload from './FileUpload';
 
 type JobApplicationFormProps = {
   jobTitle: string;
+  /** Alignement du bouton CTA (appliqué à partir de lg) */
+  ctaAlign?: 'left' | 'center' | 'right';
+  className?: string;
 };
 
-export default function JobApplicationForm({ jobTitle }: JobApplicationFormProps) {
-  const [fileName, setFileName] = useState('');
+export default function JobApplicationForm({
+  jobTitle,
+  ctaAlign = 'left',
+  className,
+}: JobApplicationFormProps) {
+  const [isPending, startTransition] = useTransition();
 
-  // on "lie" le titre de l’offre à l’action serveur
-  const formAction = sendApplication.bind(null, jobTitle);
+  const alignClass =
+    ctaAlign === 'center'
+      ? 'text-center lg:text-center'
+      : ctaAlign === 'right'
+        ? 'text-center lg:text-right'
+        : 'text-center lg:text-left';
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      setFileName(e.target.files[0].name);
-    }
+  const onAction = (formData: FormData) => {
+    startTransition(async () => {
+      await sendApplication(jobTitle, formData);
+    });
   };
 
   return (
-    <form className="job-form" action={formAction}>
+    <form name="job-application" action={onAction} className={`job-form ${className ?? ''}`}>
       <h2 className="job-form-title">Postuler à : {jobTitle}</h2>
 
       {/* honeypot anti-spam */}
@@ -35,64 +47,38 @@ export default function JobApplicationForm({ jobTitle }: JobApplicationFormProps
 
       {/* Civilité */}
       <div className="mb-4">
-        <span className="block text-[#785F49] mb-2 font-medium">Civilité</span>
+        <span className="block mb-2 font-medium text-[var(--color-dark)]">Civilité</span>
         <div className="flex flex-wrap gap-6">
           <Radio name="civilite" value="Mme" label="Mme" />
           <Radio name="civilite" value="M." label="M." />
         </div>
       </div>
 
-      {/* Prénom + Nom */}
+      {/* Prénom / Nom */}
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-        <FloatingInput name="prenom" label="Prénom" required />
-        <FloatingInput name="nom" label="Nom" required />
+        <FloatingInput label="Prénom" name="prenom" type="text" required />
+        <FloatingInput label="Nom" name="nom" type="text" required />
       </div>
 
       {/* Email */}
-      <FloatingInput name="email" label="Adresse email" type="email" required />
+      <FloatingInput label="Email" name="email" type="email" required />
 
       {/* Message */}
-      <FloatingTextarea name="message" label="Message" rows={5} required />
+      <FloatingTextarea label="Message" name="message" required />
 
-      {/* CV */}
-      <div className="file-upload mt-4">
-        <label htmlFor="cv" className="block text-[#785F49]  font-medium">
-          Joindre un CV
-        </label>
+      {/* Upload CV */}
+      <FileUpload
+        label="Joindre un CV"
+        name="cv"
+        accept=".pdf,.doc,.docx"
+        helperText="Formats acceptés : PDF, DOC, DOCX (max 5 Mo)"
+        droppable
+      />
 
-        <div className="relative">
-          <Button variant="secondary">
-            <label htmlFor="cv" className="cursor-pointer">
-              Sélectionner un fichier{' '}
-              <span className="ml-2" aria-hidden="true">
-                &rsaquo;
-              </span>
-            </label>
-          </Button>
-
-          {/* Input masqué */}
-          <input
-            type="file"
-            id="cv"
-            name="cv"
-            accept=".pdf,.doc,.docx"
-            onChange={handleFileChange}
-            className="hidden"
-          />
-        </div>
-
-        {/* Nom du fichier affiché */}
-        {fileName && (
-          <p className="file-name mt-2 text-sm text-[#785F49] italic">
-            Fichier sélectionné : {fileName}
-          </p>
-        )}
-      </div>
-
-      {/* Bouton d’envoi */}
-      <div className="mt-6 text-left">
-        <Button type="submit" variant="primary">
-          Envoyer la candidature
+      {/* CTA */}
+      <div className={`${alignClass} mt-6`}>
+        <Button type="submit" variant="primary" disabled={isPending}>
+          {isPending ? 'Envoi en cours…' : 'Envoyer la candidature'}
         </Button>
       </div>
     </form>
