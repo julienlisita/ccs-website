@@ -6,4 +6,4 @@ Disallow: /admin/
 Disallow: /draft/
 
 # Lien vers le sitemap
-Sitemap: https://www.exemple.com/sitemap.xml
+Sitemap: https://careetservices.pro/sitemap.xml
