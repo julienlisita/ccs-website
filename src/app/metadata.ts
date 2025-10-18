@@ -1,32 +1,36 @@
-// app/metadata.ts
+// src/app/metadata.ts
 
 export const metadata = {
-  title: 'Site Vitrine – Titre de votre entreprise',
+  title: 'Compagnie Care & Services – Aide à domicile en Charente & Gironde',
   description:
-    'Site vitrine professionnel pour mettre en valeur votre activité. Modèle personnalisable pour indépendants, TPE ou entreprises.',
-  metadataBase: new URL('https://www.exemple.com'),
+    'Compagnie Care & Services propose des services d’aide à domicile personnalisés en Charente et en Gironde : accompagnement des personnes âgées, entretien du logement, aide à la mobilité et bien plus.',
+  metadataBase: new URL('https://careetservices.pro'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'Titre de votre entreprise',
-    description: 'Présentez votre entreprise avec un site moderne, clair et responsive.',
-    url: 'https://www.exemple.com',
+    title: 'Compagnie Care & Services – Aide à domicile en Charente & Gironde',
+    description:
+      'Découvrez nos prestations d’aide à domicile, d’accompagnement et de maintien à domicile pour personnes âgées et en situation de handicap.',
+    url: 'https://careetservices.pro',
+    siteName: 'Compagnie Care & Services',
     type: 'website',
+    locale: 'fr_FR',
     images: [
       {
-        url: 'https://www.exemple.com/og-image.jpg',
+        url: 'https://careetservices.pro/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Titre de votre entreprise',
+        alt: 'Compagnie Care & Services – aide à domicile',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Titre de votre entreprise',
-    description: 'Site vitrine professionnel pour votre activité.',
-    images: ['https://www.exemple.com/og-image.jpg'],
+    title: 'Compagnie Care & Services',
+    description:
+      'Votre partenaire de confiance pour l’aide à domicile en Charente et en Gironde. Services humains, professionnels et adaptés à vos besoins.',
+    images: ['https://careetservices.pro/og-image.jpg'],
   },
   icons: {
     icon: [
@@ -39,5 +43,6 @@ export const metadata = {
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
+    title: 'Compagnie Care & Services',
   },
 };
