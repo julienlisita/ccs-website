@@ -16,7 +16,7 @@ export default function Hero() {
       {/* Image de fond */}
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/hero.avif') " }}
+        style={{ backgroundImage: "url('/images/home/hero.avif') " }}
       />
       {/* Overlay noir avec opacité */}
       <div className="absolute inset-0 bg-black/60" />

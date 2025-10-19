@@ -10,7 +10,7 @@ export default function RecruitmentSectionHome() {
       eyebrow="Recrutement"
       title="Rejoignez notre équipe chaleureuse"
       subtitle="Nous recherchons des personnes passionnées pour aider nos aînés et personnes en situation de handicap."
-      imageSrc="/images/recruitment-preview.avif"
+      imageSrc="/images/home/recruitment-illustration.avif"
       imageAlt="Illustration recrutement"
       ctaLabel="Voir les offres"
       ctaHref="/recruitment"

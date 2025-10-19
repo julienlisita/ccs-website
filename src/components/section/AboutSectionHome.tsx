@@ -16,7 +16,7 @@ export default function AboutSectionHome() {
           durée.
         </p>
       }
-      imageSrc="/images/team-illustration.png"
+      imageSrc="/images/home/team-illustration.avif"
       imageAlt="Illustration d’une équipe souriante dans un cadre chaleureux"
       aspect="square"
       ctaLabel="En savoir plus"
