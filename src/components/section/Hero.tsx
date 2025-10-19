@@ -25,19 +25,18 @@ export default function Hero() {
       <div className="max-w-4xl mx-auto space-y-6 z-10">
         <div className="flex justify-center">
           <Image
-            src="/images/logo-CCS.jpg"
+            src="/images/logoWithoutText.png"
             alt="Company Care & Services logo"
-            width={120}
-            height={120}
-            className="mb-4 rounded-sm"
+            width={200}
+            height={200}
           />
         </div>
-        <PageTitle color="#FFFFFF"> Company Care & Services</PageTitle>
+        <PageTitle color="#FFFFFF"> Compagnie Care & Services</PageTitle>
         <h2 className="text-xl sm:text-2xl lg:text-3xl text-white">
           Un accompagnement humain et professionnel à domicile
         </h2>
         <p className="text-sm sm:text-lg text-white/80">
-          Un accompagnement humain et professionnel à domicile
+          En Charente et en Gironde, nous vous épaulons au quotidien
         </p>
         <Button variant="primary" href="/contact">
           Nous contacter
