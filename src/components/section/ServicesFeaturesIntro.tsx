@@ -16,7 +16,7 @@ export default function ServicesFeatures({ className }: Props) {
       title="Ce que nous proposons"
       subtitle="Un accompagnement complet et bienveillant au quotidien."
       items={services.slice(0, 3)}
-      ctaLabel="En savoir plus"
+      ctaLabel="Voir tous nos services"
       ctaHref="/services"
       align="left"
       className={className}
