@@ -21,7 +21,6 @@ export default function AboutSectionHome() {
       aspect="square"
       ctaLabel="En savoir plus"
       ctaHref="/about"
-      tone="muted"
     />
   );
 }
