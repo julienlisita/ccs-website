@@ -1,50 +1,83 @@
 /* src/components/layout/Footer.css */
 
+/* === Layout global === */
 .footer {
   @apply bg-[var(--color-dark)] text-[var(--color-bg)]
-         flex flex-col sm:flex-row items-center justify-between
-         px-4 py-6 sm:px-8 sm:py-8 gap-4 sm:gap-0;
+         flex flex-col w-full px-4 sm:px-8 py-6 sm:py-8 space-y-6;
+}
+
+/* --- Bloc supérieur : logo / menu / réseaux --- */
+.footer-top {
+  @apply flex flex-col sm:flex-row justify-between items-center gap-6 sm:gap-0;
 }
 
 .footer-logo {
   @apply relative h-12 w-12 sm:h-14 sm:w-14 flex-shrink-0 rounded-lg overflow-hidden;
 }
 
-.footer-center {
-  @apply text-center;
+.footer-nav {
+  @apply flex flex-col sm:flex-row items-center justify-center 
+         space-y-2 sm:space-y-0 sm:space-x-6 text-center font-medium text-sm;
 }
 
-.footer-links {
-  @apply font-medium text-sm flex flex-col sm:flex-row justify-center items-center
-         space-y-1 sm:space-y-0 sm:space-x-4 text-center mb-2;
-}
-
-.footer-copy {
-  @apply text-xs sm:text-sm font-normal opacity-80;
-}
-
+/* --- Réseaux sociaux --- */
 .footer-socials {
   @apply flex items-center space-x-4;
 }
 
 .footer-icon {
   @apply w-8 h-8 sm:w-9 sm:h-9 transition;
-  color: currentColor;
+  color: var(--color-bg);
 }
 
 .footer-icon:hover {
   color: var(--color-primary);
 }
 
-.footer-links a {
-  color: currentColor;
+/* --- Séparateur --- */
+.footer-separator {
+  @apply w-full h-px;
+  background-color: var(--color-bg);
+  opacity: 0.3;
+}
+
+/* --- Bloc inférieur : copyright / liens légaux --- */
+.footer-bottom {
+  @apply flex flex-col sm:flex-row justify-between items-center gap-3 text-sm;
+  color: var(--color-bg);
+}
+
+.footer-copy {
+  @apply text-xs sm:text-sm font-normal opacity-80 text-center sm:text-left;
+}
+
+.footer-legal {
+  @apply flex flex-col sm:flex-row items-center space-y-1 sm:space-y-0 sm:space-x-4;
+}
+
+.footer-legal a {
+  color: var(--color-bg);
   text-decoration: none;
   transition:
     color 0.3s ease,
     text-decoration 0.3s ease;
 }
 
-.footer-links a:hover {
+.footer-legal a:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+/* --- Menu principal --- */
+.footer-nav a {
+  color: var(--color-bg);
+  text-decoration: none;
+  transition:
+    color 0.3s ease,
+    text-decoration 0.3s ease;
+}
+
+.footer-nav a:hover {
   color: var(--color-primary);
   text-decoration: underline;
 }
