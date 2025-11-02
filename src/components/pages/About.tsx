@@ -72,6 +72,7 @@ export default function About() {
 
       {/* 4) Qualité & flexibilité */}
       <SplitSection
+        className="pb-8 sm:pb-10 md:pb-12 lg:pb-16"
         eyebrow="Engagement qualité"
         title="Prestation fiable et flexible"
         content={
@@ -89,7 +90,7 @@ export default function About() {
       {/* 5) Conclusion */}
       <Section bgColor="cream">
         <SectionWrapper className="text-center">
-          <p className="mx-auto max-w-3xl font-bold sm:text-lg text-dark">
+          <p className="mx-auto max-w-3xl font-bold sm:text-lg text-dark pb-8 sm:pb-10 md:pb-12 lg:pb-16">
             Nous sommes là pour vous accompagner, vous épauler, et améliorer votre qualité de vie au
             quotidien. Merci de nous faire conﬁance dans cette mission si importante. Ensemble,
             faisons en sorte que chaque jour soit plus lumineux et agréable.

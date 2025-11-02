@@ -120,6 +120,7 @@ export default function ServicesSection({ className }: Props) {
             title="Compagnie et soutien"
             imageSrc="/images/services/companionship-care.avif"
             imageAlt=""
+            className="pb-8 sm:pb-10 md:pb-12 lg:pb-16"
             reverse
           >
             <p>

@@ -141,7 +141,7 @@ export default function FeaturesGrid<TItem = FeatureItem>({
 
   return (
     <Section className={clsx('features', className)}>
-      <SectionWrapper>
+      <SectionWrapper className="pb-8 sm:pb-10 md:pb-12 lg:pb-16">
         {(eyebrow || title || subtitle) && (
           <header className={clsx('features__header', alignClass)}>
             {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}

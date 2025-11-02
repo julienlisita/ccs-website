@@ -27,7 +27,7 @@ export default function LocationSection({ className, align = 'center' }: Props) 
 
   return (
     <Section className={className}>
-      <SectionWrapper>
+      <SectionWrapper className="pb-8 sm:pb-10 md:pb-12 lg:pb-16">
         {/* Header */}
         <div className={clsx('space-y-3', alignText)}>
           <Eyebrow>NOTRE ZONE D’INTERVENTION </Eyebrow>

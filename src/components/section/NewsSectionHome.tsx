@@ -15,7 +15,7 @@ type Props = { items: ReadonlyArray<NewsItem> };
 export default function NewsSectionHome({ items }: Props) {
   return (
     <Section>
-      <SectionWrapper>
+      <SectionWrapper className="pb-8 sm:pb-10 md:pb-12 lg:pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           {/* Colonne gauche */}
           <div className="flex flex-col items-center justify-start text-center lg:text-left lg:items-start space-y-4">
