@@ -21,9 +21,10 @@ export default function JobOffersSection({ items }: Props) {
           key={offer.id}
           title={offer.title}
           location={offer.location}
-          description={offer.description}
+          description={offer.description ?? ''}
           contractType={offer.contractType}
           publishedAt={offer.publishedAt}
+          slug={offer.slug}
         />
       )}
       getKey={(offer) => offer.id}
