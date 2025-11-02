@@ -5,6 +5,7 @@
 import { Calendar, Clock, MapPin } from 'lucide-react';
 import Button from '../ui/Button';
 import './JobOfferCard.css';
+import Link from 'next/link';
 
 type JobOfferCardProps = {
   title: string;
@@ -12,6 +13,7 @@ type JobOfferCardProps = {
   description: string;
   contractType: string; // ex: "CDI - Temps partiel"
   publishedAt: string; // date ISO
+  slug: string;
 };
 
 export function JobOfferCard({
@@ -20,6 +22,7 @@ export function JobOfferCard({
   description,
   contractType,
   publishedAt,
+  slug,
 }: JobOfferCardProps) {
   return (
     <div className="job-card">
@@ -50,11 +53,11 @@ export function JobOfferCard({
       </div>
       <div>
         <Button
-          href={`/recruitment?apply=${encodeURIComponent(title)}`}
+          href={`/recruitment/${slug}`}
           variant="secondary"
-          aria-label={`Postuler à l'offre ${title}`}
+          aria-label={`Voir l’offre ${title}`}
         >
-          Postuler{' '}
+          Voir l’offre{' '}
           <span className="ml-2" aria-hidden="true">
             &rsaquo;
           </span>
