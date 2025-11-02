@@ -1,4 +1,4 @@
-// app/recrutement/[slug]/page.tsx
+// app/recruitment/[slug]/page.tsx
 
 import { notFound } from 'next/navigation';
 import { jobOffers } from '@/data/jobOffers';
@@ -18,10 +18,9 @@ export async function generateStaticParams() {
 // (optionnel) : revalidate 0 pour éviter un cache agressif en dev
 export const revalidate = 0;
 
-type Props = { params: { slug: string } };
-
-export default function JobOfferPage({ params }: Props) {
-  const offer = jobOffers.find((o) => o.slug === params.slug);
+export default async function JobOfferPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const offer = jobOffers.find((o) => o.slug === slug);
   if (!offer) return notFound();
 
   const pubDate = format(new Date(offer.publishedAt), 'd MMMM yyyy', { locale: fr });
