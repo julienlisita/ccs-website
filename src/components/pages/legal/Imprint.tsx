@@ -17,7 +17,7 @@ export default function Imprint() {
 
       {/* Éditeur */}
       <Section>
-        <SectionWrapper className="max-w-3xl mx-auto text-[#785F49] space-y-4">
+        <SectionWrapper className="text-[#785F49]">
           <h2 className="text-xl font-semibold">Éditeur du site</h2>
           <p>
             <strong>Compagnie Care & Services</strong>
@@ -42,7 +42,7 @@ export default function Imprint() {
 
       {/* Hébergement */}
       <Section>
-        <SectionWrapper className="max-w-3xl mx-auto text-[#785F49] space-y-4">
+        <SectionWrapper className="text-[#785F49]">
           <h2 className="text-xl font-semibold">Hébergement</h2>
           <p>
             Le site <strong>careetservices.pro</strong> est hébergé par :<br />
@@ -69,7 +69,7 @@ export default function Imprint() {
 
       {/* Propriété intellectuelle */}
       <Section>
-        <SectionWrapper className="max-w-3xl mx-auto text-[#785F49] space-y-4">
+        <SectionWrapper className="text-[#785F49]">
           <h2 className="text-xl font-semibold">Propriété intellectuelle</h2>
           <p>
             L’ensemble des éléments du site <strong>Compagnie Care & Services</strong> (textes,
@@ -83,7 +83,7 @@ export default function Imprint() {
 
       {/* Responsabilité */}
       <Section>
-        <SectionWrapper className="max-w-3xl mx-auto text-[#785F49] space-y-4">
+        <SectionWrapper className="text-[#785F49]">
           <h2 className="text-xl font-semibold">Responsabilité</h2>
           <p>
             <strong>Compagnie Care & Services</strong> s’efforce de fournir des informations exactes
@@ -95,7 +95,7 @@ export default function Imprint() {
 
       {/* Données personnelles */}
       <Section>
-        <SectionWrapper className="max-w-3xl mx-auto text-[#785F49] space-y-4">
+        <SectionWrapper className="text-[#785F49]">
           <h2 className="text-xl font-semibold">Données personnelles</h2>
           <p>
             Les informations collectées via les formulaires (contact et candidature) sont utilisées
@@ -112,7 +112,7 @@ export default function Imprint() {
 
       {/* Crédits */}
       <Section>
-        <SectionWrapper className="max-w-3xl mx-auto text-[#785F49] space-y-4">
+        <SectionWrapper className="text-[#785F49] pb-8 sm:pb-10 md:pb-12 lg:pb-16">
           <h2 className="text-xl font-semibold">Crédits</h2>
           <p>
             Design & développement : <strong>Julien Lisita</strong>

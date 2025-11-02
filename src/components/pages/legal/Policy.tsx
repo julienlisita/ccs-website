@@ -17,7 +17,7 @@ export default function Privacy() {
 
       {/* 1. Données collectées */}
       <Section>
-        <SectionWrapper className="max-w-3xl mx-auto text-[#785F49] space-y-4">
+        <SectionWrapper className="text-[#785F49]">
           <h2 className="text-xl font-semibold">1. Données collectées</h2>
           <p>
             Nous recueillons uniquement les informations nécessaires au traitement de vos demandes
@@ -34,7 +34,7 @@ export default function Privacy() {
 
       {/* 2. Finalités du traitement */}
       <Section>
-        <SectionWrapper className="max-w-3xl mx-auto text-[#785F49] space-y-4">
+        <SectionWrapper className="text-[#785F49]">
           <h2 className="text-xl font-semibold">2. Finalités du traitement</h2>
           <p>Vos données sont utilisées uniquement pour :</p>
           <ul className="list-disc list-inside space-y-1">
@@ -47,7 +47,7 @@ export default function Privacy() {
 
       {/* 3. Base légale & durée de conservation */}
       <Section>
-        <SectionWrapper className="max-w-3xl mx-auto text-[#785F49] space-y-4">
+        <SectionWrapper className="text-[#785F49]">
           <h2 className="text-xl font-semibold">3. Base légale & durée de conservation</h2>
           <p>
             Le traitement repose sur votre consentement et/ou notre intérêt légitime à répondre à
@@ -59,7 +59,7 @@ export default function Privacy() {
 
       {/* 4. Sécurité */}
       <Section>
-        <SectionWrapper className="max-w-3xl mx-auto text-[#785F49] space-y-4">
+        <SectionWrapper className="text-[#785F49]">
           <h2 className="text-xl font-semibold">4. Sécurité</h2>
           <p>
             Nous mettons en œuvre des mesures techniques et organisationnelles adaptées pour
@@ -70,7 +70,7 @@ export default function Privacy() {
 
       {/* 5. Vos droits */}
       <Section>
-        <SectionWrapper className="max-w-3xl mx-auto text-[#785F49] space-y-4">
+        <SectionWrapper className="text-[#785F49]">
           <h2 className="text-xl font-semibold">5. Vos droits</h2>
           <p>
             Conformément au RGPD, vous disposez d’un droit d’accès, de rectification, de
@@ -85,7 +85,7 @@ export default function Privacy() {
 
       {/* 6. Responsable du traitement */}
       <Section>
-        <SectionWrapper className="max-w-3xl mx-auto text-[#785F49] space-y-4">
+        <SectionWrapper className="text-[#785F49]">
           <h2 className="text-xl font-semibold">6. Responsable du traitement</h2>
           <p>
             Le responsable du traitement est <strong>Compagnie Care & Services</strong>. Les
@@ -101,7 +101,7 @@ export default function Privacy() {
 
       {/* 7. Mise à jour */}
       <Section>
-        <SectionWrapper className="max-w-3xl mx-auto text-[#785F49] space-y-4">
+        <SectionWrapper className="text-[#785F49] pb-8 sm:pb-10 md:pb-12 lg:pb-16">
           <h2 className="text-xl font-semibold">7. Mise à jour</h2>
           <p>
             La présente politique peut être modifiée à tout moment pour tenir compte des évolutions
