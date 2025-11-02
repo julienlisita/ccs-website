@@ -5,56 +5,82 @@ import type { JobOffer } from '@/types/job';
 export const jobOffers: ReadonlyArray<JobOffer> = [
   {
     id: 1,
-    title: 'Poste générique',
-    location: 'Bordeaux (33)',
+    slug: 'astreinte-administrative',
+    title: 'Astreinte administrative – Remplacement / Soutien',
+    location: 'Gironde & Charente',
+    contractType: 'Astreinte – Indemnités + interventions',
+    publishedAt: '2025-10-30T09:00:00Z',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel lacus nec velit pretium interdum.',
-    contractType: 'CDI - Temps plein',
-    publishedAt: '2025-08-20T09:00:00Z',
-  },
-  {
-    id: 2,
-    title: 'Poste administratif',
-    location: 'Mérignac (33)',
-    description:
-      'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    contractType: 'CDD - Temps plein',
-    publishedAt: '2025-08-12T08:30:00Z',
-  },
-  {
-    id: 3,
-    title: 'Poste générique',
-    location: 'Pessac (33)',
-    description:
-      'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.',
-    contractType: 'CDI - Temps partiel',
-    publishedAt: '2025-08-05T18:00:00Z',
-  },
-  {
-    id: 4,
-    title: 'Responsable de secteur',
-    location: 'Libourne (33)',
-    description:
-      'Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.',
-    contractType: 'CDI - Temps plein',
-    publishedAt: '2025-07-28T10:15:00Z',
-  },
-  {
-    id: 5,
-    title: 'Poste week-end',
-    location: 'Angoulême (16)',
-    description:
-      'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.',
-    contractType: 'CDD - Week-end',
-    publishedAt: '2025-07-20T07:45:00Z',
-  },
-  {
-    id: 6,
-    title: 'Stage communication',
-    location: 'Bordeaux (33)',
-    description:
-      'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque.',
-    contractType: 'Stage - 2 à 4 mois',
-    publishedAt: '2025-07-10T09:00:00Z',
+      'Assurer la continuité du service administratif en cas d’absence ou hors horaires habituels. Relais téléphonique, gestion des urgences, mises à jour planning, reporting.',
+    service: 'Administration / Coordination – Services à la personne',
+    reportingLine: 'Responsable d’agence / Responsable administrative',
+    missionStatement:
+      'Assurer la continuité du service administratif pour garantir le bon fonctionnement de l’activité et la qualité du service rendu aux bénéficiaires et aux intervenants.',
+    sections: [
+      {
+        key: 'missions',
+        title: 'Missions principales',
+        groups: [
+          {
+            title: '1) Gestion administrative courante',
+            items: [
+              'Relais téléphonique et traitement des urgences.',
+              'Traitement des mails et courriers urgents.',
+              'Transmission des informations (bénéficiaires, intervenants, urgences, absences).',
+              'Mise à jour des plannings si nécessaire (remplacements, imprévus).',
+              'Rédaction et transmission des comptes rendus.',
+            ],
+          },
+          {
+            title: '2) Soutien opérationnel au service d’intervention',
+            items: [
+              'Relais d’informations entre intervenants et coordination.',
+              'Aide à la gestion des remplacements / organisation de dernière minute.',
+              'Vérification de la conformité des interventions (heures, bénéficiaires).',
+            ],
+          },
+          {
+            title: '3) Suivi des bénéficiaires et de la qualité',
+            items: [
+              'Garantir la continuité du service (écoute, réactivité, empathie).',
+              'Remonter toute situation à risque (chute, hospitalisation, maltraitance présumée).',
+              'Informer le responsable des incidents nécessitant un suivi.',
+            ],
+          },
+          {
+            title: '4) Reporting et communication',
+            items: [
+              'Tenue du registre d’astreinte et traçabilité des actions.',
+              'Rapport synthétique en fin d’astreinte à la direction / agence.',
+              'Communication fluide avec les équipes pour la continuité du service.',
+            ],
+          },
+        ],
+      },
+      {
+        key: 'skills',
+        title: 'Compétences requises',
+        items: [
+          'Connaissance du secteur SAP / médico-social.',
+          'Maîtrise des outils bureautiques et de planification.',
+          'Excellente expression écrite et orale.',
+          'Sens du service, réactivité, discrétion.',
+          'Gestion du stress, priorisation des urgences.',
+        ],
+      },
+      {
+        key: 'profile',
+        title: 'Profil recherché',
+        items: [
+          'Expérience en assistance administrative ou coordination à domicile.',
+          'Connaissance des publics fragiles et du cadre réglementaire.',
+          'Autonomie, sens des responsabilités, fiabilité.',
+        ],
+      },
+    ],
+    scheduleNote: 'Soirs, week-ends et jours fériés selon planning d’astreinte.',
+    workMode: 'Astreinte téléphonique à domicile et/ou présence sur site selon besoins.',
+    remunerationNote: 'Indemnité d’astreinte + paiement des interventions selon convention BAD.',
+    equipments: ['Téléphone professionnel', 'Accès logiciel', 'Documentation interne'],
   },
 ] as const;
