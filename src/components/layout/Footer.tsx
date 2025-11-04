@@ -28,7 +28,7 @@ export default function Footer() {
           <Link href="/">Accueil</Link>
           <Link href="/about">À propos</Link>
           <Link href="/services">Services</Link>
-          <Link href="/testimonials">Témoignages</Link>
+          {/* <Link href="/testimonials">Témoignages</Link> */}
           <Link href="/aids">Aides & financements</Link>
           <Link href="/news">Actualités</Link>
           <Link href="/recruitment">Recrutement</Link>

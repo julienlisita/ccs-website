@@ -16,7 +16,7 @@ export default function Home() {
       <AboutSectionHome />
       <ServicesFeaturesIntro />
       <AidsSectionHome />
-      <TestimonialsSectionHomeServer />
+      {/* <TestimonialsSectionHomeServer /> */}
       <NewsSectionHomeServer />
       <RecruitmentSectionHome />
       <Cta
