@@ -44,6 +44,7 @@ export default function HeroIntro({
             priority
             sizes="100vw"
             className="hero-intro__bg-image"
+            unoptimized
           />
           <div className="hero-intro__overlay" style={{ opacity: overlayOpacity }} />
         </div>
