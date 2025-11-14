@@ -3,11 +3,11 @@
 import Cta from '../ui/Cta';
 import Hero from '../section/Hero';
 import ServicesFeaturesIntro from '../section/ServicesFeaturesIntro';
-import TestimonialsSectionHomeServer from '../section/TestimonialsSectionHomeServer';
+// import TestimonialsSectionHomeServer from '../section/TestimonialsSectionHomeServer';
 import NewsSectionHomeServer from '../section/NewsSectionHomeServer';
-import AidsSectionHome from '../section/AidsSectionHome';
 import RecruitmentSectionHome from '../section/RecruitmentSectionHome';
 import AboutTeaser from '../section/AboutTeaser';
+import AidsTeaser from '../section/AidsTeaser';
 
 export default function Home() {
   return (
@@ -15,7 +15,7 @@ export default function Home() {
       <Hero />
       <AboutTeaser />
       <ServicesFeaturesIntro />
-      <AidsSectionHome />
+      <AidsTeaser />
       {/* <TestimonialsSectionHomeServer /> */}
       <NewsSectionHomeServer />
       <RecruitmentSectionHome />

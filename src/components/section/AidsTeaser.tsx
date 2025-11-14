@@ -1,8 +1,8 @@
-// src/components/home/AidsSectionHome.tsx
+// src/components/sections/AidsTeaser.tsx
 
 import SplitSection from '@/components/section/SplitSection';
 
-export default function AidsSectionHome() {
+export default function AidsTeaser() {
   return (
     <SplitSection
       eyebrow="Aide"
