@@ -1,9 +1,9 @@
-// src/components/section/NewsSectionHomeServer.tsx
+// src/components/section/NewsTeaserServer.tsx
 
-import NewsSectionHome from './NewsSectionHome';
 import { getPublicNewsServer } from '@/server/services/news.server';
+import NewsTeaser from './NewsTeaser';
 
-export default async function NewsSectionHomeServer() {
+export default async function NewsTeaserServer() {
   const LIMIT = 4;
   const onlyPublished = true;
 
@@ -14,5 +14,5 @@ export default async function NewsSectionHomeServer() {
 
   const items = filtered.slice(0, LIMIT);
 
-  return <NewsSectionHome items={items} />;
+  return <NewsTeaser items={items} />;
 }

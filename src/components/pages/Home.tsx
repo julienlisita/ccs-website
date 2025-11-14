@@ -3,11 +3,11 @@
 import Cta from '../ui/Cta';
 import Hero from '../section/Hero';
 // import TestimonialsSectionHomeServer from '../section/TestimonialsSectionHomeServer';
-import NewsSectionHomeServer from '../section/NewsSectionHomeServer';
 import RecruitmentSectionHome from '../section/RecruitmentSectionHome';
 import AboutTeaser from '../section/AboutTeaser';
 import AidsTeaser from '../section/AidsTeaser';
 import ServicesTeaser from '../section/ServicesTeaser';
+import NewsTeaserServer from '../section/NewsTeaserServer';
 
 export default function Home() {
   return (
@@ -17,7 +17,7 @@ export default function Home() {
       <ServicesTeaser />
       <AidsTeaser />
       {/* <TestimonialsSectionHomeServer /> */}
-      <NewsSectionHomeServer />
+      <NewsTeaserServer />
       <RecruitmentSectionHome />
       <Cta
         title="Besoin d’un accompagnement au quotidien ?"

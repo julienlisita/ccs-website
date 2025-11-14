@@ -1,4 +1,4 @@
-// src/components/section/NewsSectionHome.tsx
+// src/components/section/NewsTeaser.tsx
 
 'use client';
 
@@ -12,7 +12,7 @@ import Subtitle from '../ui/Subtitle';
 
 type Props = { items: ReadonlyArray<NewsItem> };
 
-export default function NewsSectionHome({ items }: Props) {
+export default function NewsTeaser({ items }: Props) {
   return (
     <Section>
       <SectionWrapper className="pb-8 sm:pb-10 md:pb-12 lg:pb-16">
