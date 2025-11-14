@@ -1,4 +1,4 @@
-// src/components/common/Section.tsx
+// src/components/layout/Section.tsx
 
 import React from 'react';
 
@@ -6,6 +6,9 @@ type SectionProps = {
   children: React.ReactNode;
   className?: string;
   bgColor?: string;
+  id?: string;
+  labelledBy?: string; // id du titre principal (SectionTitle)
+  describedBy?: string; // id du sous-titre (Subtitle)
 };
 
 const resolveColor = (color: string): string => {
@@ -15,10 +18,23 @@ const resolveColor = (color: string): string => {
   return `var(--color-${color})`;
 };
 
-export default function Section({ children, className = '', bgColor }: SectionProps) {
+export default function Section({
+  children,
+  className = '',
+  bgColor,
+  id,
+  labelledBy,
+  describedBy,
+}: SectionProps) {
   const style = bgColor ? { backgroundColor: resolveColor(bgColor) } : undefined;
   return (
-    <section className={`pt-8 sm:pt-10 md:pt-12 lg:pt-16 ${className}`} style={style}>
+    <section
+      id={id}
+      aria-labelledby={labelledBy}
+      aria-describedby={describedBy}
+      className={`py-8 sm:py-10 md:py-12 lg:py-16 ${className}`}
+      style={style}
+    >
       {children}
     </section>
   );
