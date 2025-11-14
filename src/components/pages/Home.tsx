@@ -2,19 +2,19 @@
 
 import Cta from '../ui/Cta';
 import Hero from '../section/Hero';
-import ServicesFeaturesIntro from '../section/ServicesFeaturesIntro';
 // import TestimonialsSectionHomeServer from '../section/TestimonialsSectionHomeServer';
 import NewsSectionHomeServer from '../section/NewsSectionHomeServer';
 import RecruitmentSectionHome from '../section/RecruitmentSectionHome';
 import AboutTeaser from '../section/AboutTeaser';
 import AidsTeaser from '../section/AidsTeaser';
+import ServicesTeaser from '../section/ServicesTeaser';
 
 export default function Home() {
   return (
     <div>
       <Hero />
       <AboutTeaser />
-      <ServicesFeaturesIntro />
+      <ServicesTeaser />
       <AidsTeaser />
       {/* <TestimonialsSectionHomeServer /> */}
       <NewsSectionHomeServer />
