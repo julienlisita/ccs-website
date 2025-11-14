@@ -3,14 +3,14 @@
 import RecruitmentClient from '@/components/pages/RecruitmentClient';
 import JobOffersSectionServer from '../section/JobOffersSectionServer';
 import { Suspense } from 'react';
-import HeroIntro from '../section/HeroIntro';
 import { FileText } from 'lucide-react';
 import Cta from '../ui/Cta';
+import HeroPage from '../section/HeroPage';
 
 export default async function Recruitment() {
   return (
     <>
-      <HeroIntro
+      <HeroPage
         icon={<FileText size={40} />}
         title="Recrutement"
         subtitle="Découvrez nos opportunités et rejoignez notre équipe."

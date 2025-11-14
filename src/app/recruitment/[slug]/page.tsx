@@ -2,13 +2,13 @@
 
 import { notFound } from 'next/navigation';
 import { jobOffers } from '@/data/jobOffers';
-import HeroIntro from '@/components/section/HeroIntro';
 import Section from '@/components/common/Section';
 import SectionWrapper from '@/components/common/SectionWrapper';
 import { Briefcase } from 'lucide-react';
 import { format } from 'date-fns';
 import { fr } from 'date-fns/locale';
 import Button from '@/components/ui/Button';
+import HeroPage from '@/components/section/HeroPage';
 
 // --- SSG : génère toutes les pages de détail à partir des slugs connus ---
 export async function generateStaticParams() {
@@ -27,7 +27,7 @@ export default async function JobOfferPage({ params }: { params: Promise<{ slug:
 
   return (
     <div>
-      <HeroIntro
+      <HeroPage
         icon={<Briefcase size={40} />}
         title={offer.title}
         subtitle={`${offer.location} • ${offer.contractType} • Publiée le ${pubDate}`}

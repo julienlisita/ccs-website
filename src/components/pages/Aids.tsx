@@ -1,14 +1,14 @@
 // src/components/pages/Home.tsx
 
 import { HandCoins } from 'lucide-react';
-import HeroIntro from '../section/HeroIntro';
 import Cta from '../ui/Cta';
 import AidsSection from '../section/AidsSection';
+import HeroPage from '../section/HeroPage';
 
 export default function Aids() {
   return (
     <div>
-      <HeroIntro
+      <HeroPage
         icon={<HandCoins size={40} />}
         title="Aides & financements"
         subtitle="Retrouvez les dernières nouvelles, articles et mises à jour."

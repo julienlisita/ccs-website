@@ -5,12 +5,12 @@
 import Cta from '../ui/Cta';
 import ServicesSection from '../section/ServicesSection';
 import { Briefcase } from 'lucide-react';
-import HeroIntro from '../section/HeroIntro';
+import HeroPage from '../section/HeroPage';
 
 export default function ServicesFeatures() {
   return (
     <div>
-      <HeroIntro
+      <HeroPage
         icon={<Briefcase size={40} />}
         title="Nos services"
         subtitle="Un aperçu clair et détaillé de ce que nous proposons."

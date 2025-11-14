@@ -1,14 +1,12 @@
-// src/components/section/HeroIntro.tsx
-
-'use client';
+// src/components/section/HeroPage.tsx
 
 import PageTitle from '@/components/ui/PageTitle';
 import clsx from 'clsx';
 import type { ReactNode } from 'react';
-import './HeroIntro.css';
+import './HeroPage.css';
 import Image from 'next/image';
 
-type HeroIntroProps = {
+type HeroPageProps = {
   title: string;
   subtitle?: string;
   align?: 'left' | 'center' | 'right';
@@ -18,7 +16,7 @@ type HeroIntroProps = {
   className?: string;
 };
 
-export default function HeroIntro({
+export default function HeroPage({
   title,
   subtitle,
   align = 'center',
@@ -26,7 +24,7 @@ export default function HeroIntro({
   backgroundImage,
   overlayOpacity = 0.4,
   className = '',
-}: HeroIntroProps) {
+}: HeroPageProps) {
   return (
     <section
       className={clsx('hero-intro', className, {

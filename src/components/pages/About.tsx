@@ -1,18 +1,18 @@
 // src/components/pages/About.tsx
 
 import Cta from '../ui/Cta';
-import HeroIntro from '../section/HeroIntro';
 import { Users } from 'lucide-react';
 import ValuesSection from '../section/ValueSection';
 import Section from '../common/Section';
 import SectionWrapper from '../common/SectionWrapper';
 import SectionTitle from '../ui/SectionTitle';
 import SplitSection from '../section/SplitSection';
+import HeroPage from '../section/HeroPage';
 
 export default function About() {
   return (
     <div>
-      <HeroIntro
+      <HeroPage
         icon={<Users size={40} />}
         title="Qui sommes-nous ?"
         subtitle="Découvrez notre équipe, nos valeurs et notre vision."

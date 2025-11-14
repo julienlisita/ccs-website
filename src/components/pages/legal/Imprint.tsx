@@ -1,14 +1,14 @@
 // src/components/pages/legal/Imprint.tsx
 
-import HeroIntro from '@/components/section/HeroIntro';
 import { Scale } from 'lucide-react';
 import Section from '@/components/common/Section';
 import SectionWrapper from '@/components/common/SectionWrapper';
+import HeroPage from '@/components/section/HeroPage';
 
 export default function Imprint() {
   return (
     <div>
-      <HeroIntro
+      <HeroPage
         icon={<Scale size={40} />}
         title="Mentions légales"
         subtitle="Informations légales concernant l’édition et l’hébergement du site de Compagnie Care & Services."
@@ -102,7 +102,7 @@ export default function Imprint() {
             uniquement pour traiter votre demande et ne sont pas stockées dans une base de données à
             des fins marketing. Pour en savoir plus sur vos droits (accès, rectification,
             suppression), consultez notre{' '}
-            <a href="/politique-de-confidentialite" className="text-[#BA805B] hover:underline">
+            <a href="/legal/privacy" className="text-[#BA805B] hover:underline">
               Politique de confidentialité
             </a>
             .

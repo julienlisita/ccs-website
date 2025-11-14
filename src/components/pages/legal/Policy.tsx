@@ -1,14 +1,14 @@
 // src/components/pages/legal/Policy.tsx
 
-import HeroIntro from '@/components/section/HeroIntro';
 import { Shield } from 'lucide-react';
 import Section from '@/components/common/Section';
 import SectionWrapper from '@/components/common/SectionWrapper';
+import HeroPage from '@/components/section/HeroPage';
 
 export default function Privacy() {
   return (
     <div>
-      <HeroIntro
+      <HeroPage
         icon={<Shield size={40} />}
         title="Politique de confidentialité"
         subtitle="Découvrez comment nous collectons, utilisons et protégeons vos données personnelles conformément au RGPD."
@@ -78,7 +78,11 @@ export default function Privacy() {
           </p>
           <p>
             Pour exercer vos droits :{' '}
-            <span className="text-[#BA805B] font-medium">[adresse e-mail à renseigner]</span>
+            <span className="text-[#BA805B] font-medium">
+              <a href="mailto:contact@careetservices.pro" className="underline hover:no-underline">
+                contact@careetservices.pro
+              </a>
+            </span>
           </p>
         </SectionWrapper>
       </Section>
@@ -91,7 +95,7 @@ export default function Privacy() {
             Le responsable du traitement est <strong>Compagnie Care & Services</strong>. Les
             informations d’identification complètes (éditeur, adresse, SIRET, hébergeur) sont
             disponibles dans nos{' '}
-            <a href="/mentions-legales" className="text-[#BA805B] hover:underline">
+            <a href="/legal/imprint" className="text-[#BA805B] hover:underline">
               Mentions légales
             </a>
             .
