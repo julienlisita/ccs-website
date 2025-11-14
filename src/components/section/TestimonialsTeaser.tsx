@@ -1,4 +1,4 @@
-// src/components/sections/TestimonialsSectionHome.tsx
+// src/components/sections/TestimonialsTeaser.tsx
 
 'use client';
 
@@ -10,7 +10,7 @@ type Props = {
   items: ReadonlyArray<Testimonial>;
 };
 
-export default function TestimonialsSectionHome({ items }: Props) {
+export default function TestimonialsTeaser({ items }: Props) {
   return (
     <FeaturesGrid<Testimonial>
       eyebrow="Ils nous font confiance"
