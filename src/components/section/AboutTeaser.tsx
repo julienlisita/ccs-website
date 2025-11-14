@@ -1,8 +1,8 @@
-// src/components/sections/AboutSectionHome.tsx
+// src/components/sections/AboutTeaser.tsx
 
 import SplitSection from './SplitSection';
 
-export default function AboutSectionHome() {
+export default function AboutTeaser() {
   return (
     <SplitSection
       eyebrow="À VOS CÔTÉS AU QUOTIDIEN"
