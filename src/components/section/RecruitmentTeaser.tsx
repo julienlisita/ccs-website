@@ -1,10 +1,10 @@
-// src/components/section/RecruitmentSectionHome.tsx
+// src/components/section/RecruitmentTeaser.tsx
 
 'use client';
 
 import SplitSection from '@/components/section/SplitSection';
 
-export default function RecruitmentSectionHome() {
+export default function RecruitmentTeaser() {
   return (
     <SplitSection
       eyebrow="Recrutement"
