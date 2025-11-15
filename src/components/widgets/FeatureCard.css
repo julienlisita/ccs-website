@@ -37,7 +37,7 @@
 }
 .feature-card__icon-inner {
   @apply w-10 h-10;
-  color: transparent;
+  color: inherit;
 }
 .feature-card__header .feature-card__icon-inner {
   color: inherit; /* si header coloré */
