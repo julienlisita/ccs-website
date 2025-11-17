@@ -8,7 +8,7 @@
   --color-ochre: #ba805b; /* Ocre */
   --color-green: #92a095; /* Green/grey */
   --color-cream: #f3ece2; /* Cream */
-  --color-earth: #785f49; /* Earth/Brown */
+  --color-earth: #5d4937; /* Earth/Brown */
 
   /* Functional tokens (used in code) */
   --color-primary: var(--color-ochre);
