@@ -27,7 +27,7 @@
 
 /* Body */
 .feature-card__body {
-  @apply flex flex-col p-4 pt-0 gap-2;
+  @apply flex flex-col pt-0 gap-2;
 }
 
 /* Icon */
