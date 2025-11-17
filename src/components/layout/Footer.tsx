@@ -37,11 +37,21 @@ export default function Footer() {
 
         {/* Réseaux sociaux */}
         <div className="footer-socials">
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            <FiFacebook className="footer-icon" />
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Suivez-nous sur Facebook"
+          >
+            <FiFacebook className="footer-icon" aria-hidden="true" />
           </a>
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            <FiInstagram className="footer-icon" />
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Suivez-nous sur Instagram"
+          >
+            <FiInstagram className="footer-icon" aria-hidden="true" />
           </a>
         </div>
       </div>
