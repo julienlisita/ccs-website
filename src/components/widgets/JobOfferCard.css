@@ -22,7 +22,7 @@
 
 .job-card-meta {
   @apply flex flex-col sm:flex-row sm:flex-wrap gap-2 text-sm mt-auto  mb-3;
-  color: var(--color-secondary);
+  color: #515c51;
 }
 
 .meta-item {
