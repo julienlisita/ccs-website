@@ -4,6 +4,7 @@ import { HandCoins } from 'lucide-react';
 import Cta from '../ui/Cta';
 import AidsSection from '../section/AidsSection';
 import HeroPage from '../section/HeroPage';
+import aidsHeroBg from '@/assets/images/hero/aids-bg.avif';
 
 export default function Aids() {
   return (
@@ -13,7 +14,7 @@ export default function Aids() {
         title="Aides & financements"
         subtitle="Retrouvez les dernières nouvelles, articles et mises à jour."
         align="center"
-        backgroundImage="/images/hero/aids-bg.avif"
+        backgroundImage={aidsHeroBg}
         overlayOpacity={0.4}
       />
       <AidsSection />

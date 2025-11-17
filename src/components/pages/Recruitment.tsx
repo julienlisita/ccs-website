@@ -6,6 +6,7 @@ import { Suspense } from 'react';
 import { FileText } from 'lucide-react';
 import Cta from '../ui/Cta';
 import HeroPage from '../section/HeroPage';
+import recruitmentHeroBg from '@/assets/images/hero/recruitment-bg.avif';
 
 export default async function Recruitment() {
   return (
@@ -15,7 +16,7 @@ export default async function Recruitment() {
         title="Recrutement"
         subtitle="Découvrez nos opportunités et rejoignez notre équipe."
         align="center"
-        backgroundImage="/images/hero/recruitment-bg.avif"
+        backgroundImage={recruitmentHeroBg}
         overlayOpacity={0.4}
       />
       <JobOffersSectionServer />

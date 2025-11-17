@@ -1,6 +1,7 @@
 // src/components/section/HeroPage.tsx
 
 import PageTitle from '@/components/ui/PageTitle';
+import type { StaticImageData } from 'next/image';
 import clsx from 'clsx';
 import type { ReactNode } from 'react';
 import './HeroPage.css';
@@ -11,7 +12,7 @@ type HeroPageProps = {
   subtitle?: string;
   align?: 'left' | 'center' | 'right';
   icon?: ReactNode;
-  backgroundImage?: string;
+  backgroundImage?: string | StaticImageData;
   overlayOpacity?: number;
   className?: string;
 };
@@ -42,7 +43,7 @@ export default function HeroPage({
             priority
             sizes="100vw"
             className="hero-intro__bg-image"
-            unoptimized
+            placeholder="blur"
           />
           <div className="hero-intro__overlay" style={{ opacity: overlayOpacity }} />
         </div>

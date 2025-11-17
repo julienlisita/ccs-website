@@ -8,6 +8,7 @@ import SectionWrapper from '../common/SectionWrapper';
 import SectionTitle from '../ui/SectionTitle';
 import SplitSection from '../section/SplitSection';
 import HeroPage from '../section/HeroPage';
+import aboutHeroBg from '@/assets/images/hero/about-bg.avif';
 
 export default function About() {
   return (
@@ -17,7 +18,7 @@ export default function About() {
         title="Qui sommes-nous ?"
         subtitle="Découvrez notre équipe, nos valeurs et notre vision."
         align="center"
-        backgroundImage="/images/hero/about-bg.avif"
+        backgroundImage={aboutHeroBg}
       />
       {/* 1) Intro texte seul (titre de page) */}
       <Section>

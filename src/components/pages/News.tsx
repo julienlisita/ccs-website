@@ -4,6 +4,7 @@ import { Newspaper } from 'lucide-react';
 import NewsSectionServer from '../section/NewsSectionServer';
 import Cta from '../ui/Cta';
 import HeroPage from '../section/HeroPage';
+import NewsHeroBg from '@/assets/images/hero/news-bg.avif';
 
 export default function NewsPageView() {
   return (
@@ -13,7 +14,7 @@ export default function NewsPageView() {
         title="Actualités"
         subtitle="Retrouvez les dernières nouvelles, articles et mises à jour."
         align="center"
-        backgroundImage="/images/hero/news-bg.avif"
+        backgroundImage={NewsHeroBg}
         overlayOpacity={0.4}
       />
       <NewsSectionServer />

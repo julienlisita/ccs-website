@@ -5,6 +5,7 @@ import ContactInfoSection from '../section/ContactInfoSection';
 import ContactFormSection from '../section/ContactFormSection';
 import LocationSection from '../section/LocationSection';
 import HeroPage from '../section/HeroPage';
+import contactHeroBg from '@/assets/images/hero/contact-bg.avif';
 
 export default function Contact() {
   return (
@@ -14,7 +15,7 @@ export default function Contact() {
         title="Contactez-nous"
         subtitle="Besoin d’informations ou d’un devis ? Nous sommes à votre écoute."
         align="center"
-        backgroundImage="/images/hero/contact-bg.avif"
+        backgroundImage={contactHeroBg}
         overlayOpacity={0.4}
       />
       <ContactFormSection />
