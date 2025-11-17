@@ -66,7 +66,7 @@ export default function About() {
         }
         imageSrc="/images/about/companionship-care.png"
         imageAlt="Écoute et accompagnement au domicile"
-        aspect="square"
+        aspect="landscape"
         reverse
       />
 
