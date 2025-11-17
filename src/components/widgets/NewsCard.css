@@ -36,12 +36,12 @@
 
 .news-card-date {
   @apply text-xs whitespace-nowrap;
-  color: var(--color-secondary);
+  color: #515c51;
 }
 
 .news-card-source {
-  @apply text-sm py-0.5 px-2;
-  background-color: var(--color-secondary);
+  @apply text-sm py-2 px-3 rounded-lg;
+  background-color: #515c51;
   color: white;
 }
 
