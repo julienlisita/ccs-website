@@ -25,10 +25,11 @@ export default function Hero() {
       <div className="max-w-4xl mx-auto space-y-6 z-10">
         <div className="flex justify-center">
           <Image
-            src="/images/logoWithoutText.png"
+            src="/images/logoWithoutText.avif"
             alt="Company Care & Services logo"
             width={200}
             height={200}
+            sizes="200px"
           />
         </div>
         <PageTitle color="#FFFFFF"> Compagnie Care & Services</PageTitle>
