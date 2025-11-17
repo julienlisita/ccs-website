@@ -1,7 +1,5 @@
 // src/components/pages/Services.tsx
 
-'use client';
-
 import Cta from '../ui/Cta';
 import ServicesSection from '../section/ServicesSection';
 import { Briefcase } from 'lucide-react';

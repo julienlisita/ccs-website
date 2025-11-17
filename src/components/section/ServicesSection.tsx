@@ -1,18 +1,12 @@
 // src/components/Section/ServicesSection.tsx
 
-'use client';
-
 import { BrushCleaning, FileText, Handshake, UserCheck, Utensils } from 'lucide-react';
 import Section from '../common/Section';
 import SectionWrapper from '../common/SectionWrapper';
 import Split from '../patterns/Split';
 import SectionTitle from '../ui/SectionTitle';
 
-type Props = {
-  className?: string;
-};
-
-export default function ServicesSection({ className }: Props) {
+export default function ServicesSection() {
   return (
     <Section>
       <SectionWrapper>
