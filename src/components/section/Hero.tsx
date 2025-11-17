@@ -14,10 +14,16 @@ export default function Hero() {
       style={{ minHeight: 'calc(100vh - var(--header-height))' }}
     >
       {/* Image de fond */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/home/hero.avif') " }}
-      />
+      <div className="absolute inset-0 -z-10">
+        <Image
+          src="/images/home/hero.avif"
+          alt=""
+          fill
+          priority // important pour un hero
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+      </div>
       {/* Overlay noir avec opacité */}
       <div className="absolute inset-0 bg-black/60" />
 
