@@ -15,7 +15,7 @@ export default function NewsSection({ items }: Props) {
   return (
     <Section>
       <SectionWrapper>
-        <HeaderBlock eyebrow="Articles récents" align="left" />
+        <HeaderBlock title="Articles récents" align="left" />
 
         <FeaturesGrid
           items={items}

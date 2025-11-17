@@ -15,7 +15,7 @@ export default function JobOffersSection({ items }: Props) {
   return (
     <Section>
       <SectionWrapper>
-        <HeaderBlock eyebrow="NOS OFFRES D’EMPLOI" align="left" />
+        <HeaderBlock title="NOS OFFRES D’EMPLOI" align="left" />
 
         <FeaturesGrid
           items={items}
