@@ -17,14 +17,9 @@ export default function Contact() {
         backgroundImage="/images/hero/contact-bg.avif"
         overlayOpacity={0.4}
       />
-      <ContactFormSection
-        eyebrow="Contact"
-        title="Parlez-nous de votre besoin"
-        subtitle="Remplissez le formulaire, nous revenons vers vous rapidement."
-        align="left"
-      />
+      <ContactFormSection />
       <ContactInfoSection />
-      <LocationSection align="left" />
+      <LocationSection />
     </div>
   );
 }

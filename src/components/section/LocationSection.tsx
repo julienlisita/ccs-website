@@ -4,46 +4,28 @@
 
 import Section from '@/components/common/Section';
 import SectionWrapper from '@/components/common/SectionWrapper';
-import Eyebrow from '@/components/ui/Eyebrow';
-import SectionTitle from '@/components/ui/SectionTitle';
-import Subtitle from '@/components/ui/Subtitle';
 import clsx from 'clsx';
+import HeaderBlock from '../patterns/HeaderBlock';
 
-type Props = {
-  className?: string;
-  align?: 'left' | 'center' | 'right';
-};
-
-export default function LocationSection({ className, align = 'center' }: Props) {
-  const alignText =
-    align === 'left'
-      ? 'text-center md:text-left'
-      : align === 'right'
-        ? 'text-center md:text-right'
-        : 'text-center';
-
-  const cardAlign =
-    align === 'left' ? 'md:items-start' : align === 'right' ? 'md:items-end' : 'md:items-center';
-
+export default function LocationSection() {
   return (
-    <Section className={className}>
+    <Section>
       <SectionWrapper className="pb-8 sm:pb-10 md:pb-12 lg:pb-16">
         {/* Header */}
-        <div className={clsx('space-y-3', alignText)}>
-          <Eyebrow>NOTRE ZONE D’INTERVENTION </Eyebrow>
-          <SectionTitle>Présents en Charente et en Gironde</SectionTitle>
-          <Subtitle>
-            Nous intervenons principalement dans ces deux départements. Contactez-nous pour vérifier
-            la disponibilité de nos services dans votre secteur.
-          </Subtitle>
-        </div>
+        <HeaderBlock
+          eyebrow="NOTRE ZONE D’INTERVENTION"
+          title="Présents en Charente et en Gironde"
+          subtitle="Nous intervenons principalement dans ces deux départements. Contactez-nous pour vérifier
+            la disponibilité de nos services dans votre secteur."
+          align="left"
+        />
 
         {/* Cartes */}
         <div
           className={clsx('mt-10 grid grid-cols-1 md:grid-cols-2 gap-8', 'items-start md:gap-12')}
         >
           {/* Carte Gironde */}
-          <div className={clsx('flex flex-col items-center text-center space-y-4', cardAlign)}>
+          <div className="flex flex-col items-center text-center space-y-4">
             <div className="w-full aspect-[4/3] rounded-xl overflow-hidden shadow-md">
               <iframe
                 title="Gironde"
@@ -59,7 +41,7 @@ export default function LocationSection({ className, align = 'center' }: Props) 
           </div>
 
           {/* Carte Charente */}
-          <div className={clsx('flex flex-col items-center text-center space-y-4', cardAlign)}>
+          <div className="flex flex-col items-center text-center space-y-4">
             <div className="w-full aspect-[4/3] rounded-xl overflow-hidden shadow-md">
               <iframe
                 title="Charente"
