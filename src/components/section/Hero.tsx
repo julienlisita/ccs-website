@@ -19,7 +19,7 @@ export default function Hero() {
           src="/images/home/hero.avif"
           alt=""
           fill
-          priority // important pour un hero
+          priority
           sizes="100vw"
           className="object-cover object-center"
         />
@@ -33,6 +33,7 @@ export default function Hero() {
           <Image
             src="/images/logoWithoutText.avif"
             alt="Company Care & Services logo"
+            priority
             width={200}
             height={200}
             sizes="200px"
