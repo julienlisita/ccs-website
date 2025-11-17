@@ -10,6 +10,40 @@ import { fr } from 'date-fns/locale';
 import Button from '@/components/ui/Button';
 import HeroPage from '@/components/section/HeroPage';
 
+import type { Metadata } from 'next';
+
+// --- Métadonnées dynamiques pour chaque offre ---
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const offer = jobOffers.find((o) => o.slug === slug);
+
+  // Fallback si aucune offre trouvée (dev / slug invalide)
+  if (!offer) {
+    return {
+      title: 'Offre non trouvée – Compagnie Care & Services',
+      description:
+        'Cette offre d’emploi n’existe pas ou n’est plus disponible chez Compagnie Care & Services.',
+      alternates: {
+        canonical: `https://careetservices.pro/recruitment/${slug}`,
+      },
+    };
+  }
+
+  const pubDate = format(new Date(offer.publishedAt), 'd MMMM yyyy', { locale: fr });
+
+  return {
+    title: `${offer.title} – Recrutement – Compagnie Care & Services`,
+    description: `${offer.title} à ${offer.location} (${offer.contractType}). Offre publiée le ${pubDate}. Découvrez le détail du poste et postulez en ligne.`,
+    alternates: {
+      canonical: `https://careetservices.pro/recruitment/${slug}`,
+    },
+  };
+}
+
 // --- SSG : génère toutes les pages de détail à partir des slugs connus ---
 export async function generateStaticParams() {
   return jobOffers.map((o) => ({ slug: o.slug }));
