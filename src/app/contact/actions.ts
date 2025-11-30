@@ -17,8 +17,8 @@ const schema = z.object({
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-const FROM = 'Site Template <no-reply@resend.dev>';
-const TO = 'julien.lisita@gmail.com';
+const FROM = 'Care et Services <no-reply@careetservices.pro>';
+const TO = 'contact@careetservices.pro';
 
 export async function sendContact(formData: FormData): Promise<void> {
   'use server';
