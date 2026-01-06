@@ -3,7 +3,6 @@
 'use server';
 
 import { z } from 'zod';
-import { Resend } from 'resend';
 import { redirect } from 'next/navigation';
 
 const schema = z.object({
@@ -15,23 +14,64 @@ const schema = z.object({
   company: z.string().optional(),
 });
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const TO = [{ email: 'contact@careetservices.pro', name: 'Care et Services' }];
+const FROM = { email: 'no-reply@careetservices.pro', name: 'Care et Services' };
 
-const FROM = 'Care et Services <no-reply@careetservices.pro>';
-const TO = 'contact@careetservices.pro';
+// Brevo attend les pièces jointes au format:
+// attachments: [{ name: "cv.pdf", content: "<base64>" }]
+type BrevoAttachment = { name: string; content: string };
 
 async function blobToBase64(file: File) {
   const buffer = Buffer.from(await file.arrayBuffer());
   return buffer.toString('base64');
 }
 
+async function sendBrevoEmail(params: {
+  subject: string;
+  htmlContent: string;
+  replyToEmail?: string;
+  replyToName?: string;
+  attachments?: BrevoAttachment[];
+}) {
+  const apiKey = process.env.BREVO_API_KEY;
+  if (!apiKey) throw new Error('Missing BREVO_API_KEY');
+
+  const payload = {
+    sender: FROM,
+    to: TO,
+    subject: params.subject,
+    htmlContent: params.htmlContent,
+    ...(params.replyToEmail
+      ? { replyTo: { email: params.replyToEmail, name: params.replyToName ?? params.replyToEmail } }
+      : {}),
+    ...(params.attachments?.length ? { attachment: params.attachments } : {}),
+  };
+
+  const res = await fetch('https://api.brevo.com/v3/smtp/email', {
+    method: 'POST',
+    headers: {
+      accept: 'application/json',
+      'content-type': 'application/json',
+      'api-key': apiKey,
+    },
+    body: JSON.stringify(payload),
+    cache: 'no-store',
+  });
+
+  if (!res.ok) {
+    const text = await res.text().catch(() => '');
+    console.error('Brevo send failed:', res.status, text);
+    throw new Error('Brevo send failed');
+  }
+}
+
 export async function sendApplication(jobTitle: string, formData: FormData): Promise<void> {
   'use server';
 
-  //  Vérification du honeypot AVANT validation
+  // Honeypot AVANT validation
   if (formData.get('company')) {
     console.warn('Spam détecté sur le formulaire de recrutement');
-    redirect('/thank-you-application'); // redirection neutre pour le bot
+    redirect('/thank-you-application');
   }
 
   const data = schema.parse({
@@ -40,11 +80,31 @@ export async function sendApplication(jobTitle: string, formData: FormData): Pro
     nom: formData.get('nom')?.toString(),
     email: formData.get('email')?.toString(),
     message: formData.get('message')?.toString(),
+    company: formData.get('company')?.toString(),
   });
 
   const cv = formData.get('cv') as File | null;
-  const attachments =
-    cv && cv.size > 0 ? [{ filename: cv.name, content: await blobToBase64(cv) }] : [];
+
+  // (Optionnel mais recommandé) mini garde-fous
+  const MAX_BYTES = 5 * 1024 * 1024; // 5MB
+  const allowedTypes = new Set([
+    'application/pdf',
+    'application/msword',
+    'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+  ]);
+
+  let attachments: BrevoAttachment[] = [];
+  if (cv && cv.size > 0) {
+    if (cv.size > MAX_BYTES) {
+      // tu peux aussi redirect vers une page d'erreur dédiée
+      throw new Error('CV too large');
+    }
+    if (cv.type && !allowedTypes.has(cv.type)) {
+      throw new Error('Unsupported CV type');
+    }
+
+    attachments = [{ name: cv.name, content: await blobToBase64(cv) }];
+  }
 
   const html = `
     <h3>Nouvelle candidature</h3>
@@ -56,12 +116,11 @@ export async function sendApplication(jobTitle: string, formData: FormData): Pro
     <p><em>CV : ${attachments.length ? 'fourni' : 'non fourni'}</em></p>
   `;
 
-  await resend.emails.send({
-    from: FROM,
-    to: TO,
-    replyTo: data.email,
+  await sendBrevoEmail({
     subject: `Nouvelle candidature – ${jobTitle}`,
-    html,
+    htmlContent: html,
+    replyToEmail: data.email,
+    replyToName: `${data.prenom} ${data.nom}`.trim(),
     attachments,
   });
 
