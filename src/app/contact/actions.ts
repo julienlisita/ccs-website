@@ -3,7 +3,6 @@
 'use server';
 
 import { z } from 'zod';
-import { Resend } from 'resend';
 import { redirect } from 'next/navigation';
 
 const schema = z.object({
@@ -15,15 +14,54 @@ const schema = z.object({
   company: z.string().optional(),
 });
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const TO = [{ email: 'contact@careetservices.pro', name: 'Care et Services' }];
 
-const FROM = 'Care et Services <no-reply@careetservices.pro>';
-const TO = 'contact@careetservices.pro';
+const FROM = { email: 'no-reply@careetservices.pro', name: 'Care et Services' };
+
+async function sendBrevoEmail(params: {
+  subject: string;
+  htmlContent: string;
+  replyToEmail?: string;
+  replyToName?: string;
+}) {
+  const apiKey = process.env.BREVO_API_KEY;
+  if (!apiKey) throw new Error('Missing BREVO_API_KEY');
+
+  const payload = {
+    sender: FROM,
+    to: TO,
+    subject: params.subject,
+    htmlContent: params.htmlContent,
+    // Brevo Transactional: replyTo sous forme d'objet
+    ...(params.replyToEmail
+      ? { replyTo: { email: params.replyToEmail, name: params.replyToName ?? params.replyToEmail } }
+      : {}),
+  };
+
+  const res = await fetch('https://api.brevo.com/v3/smtp/email', {
+    method: 'POST',
+    headers: {
+      accept: 'application/json',
+      'content-type': 'application/json',
+      'api-key': apiKey,
+    },
+    body: JSON.stringify(payload),
+    // Optionnel: éviter un cache côté runtime
+    cache: 'no-store',
+  });
+
+  if (!res.ok) {
+    const text = await res.text().catch(() => '');
+    // On log côté serveur (utile en prod), mais on ne leak pas les détails au user
+    console.error('Brevo send failed:', res.status, text);
+    throw new Error('Brevo send failed');
+  }
+}
 
 export async function sendContact(formData: FormData): Promise<void> {
   'use server';
 
-  // Vérification du honeypot
+  // Honeypot anti-spam
   if (formData.get('company')) {
     console.warn('Spam détecté via le champ honeypot');
     redirect('/thank-you');
@@ -46,12 +84,11 @@ export async function sendContact(formData: FormData): Promise<void> {
     <p><strong>Message :</strong><br/>${data.message.replace(/\n/g, '<br/>')}</p>
   `;
 
-  await resend.emails.send({
-    from: FROM,
-    to: TO,
-    replyTo: data.email,
+  await sendBrevoEmail({
     subject: 'Nouveau message – Formulaire de contact',
-    html,
+    htmlContent: html,
+    replyToEmail: data.email,
+    replyToName: `${data.prenom} ${data.nom}`.trim(),
   });
 
   redirect('/thank-you');
