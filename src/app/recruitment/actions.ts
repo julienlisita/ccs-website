@@ -11,24 +11,49 @@ const schema = z.object({
   nom: z.string().min(1),
   email: z.string().email(),
   message: z.string().min(5),
-  company: z.string().optional(),
+  company: z.string().optional(), // honeypot
 });
 
 const TO = [{ email: 'contact@careetservices.pro', name: 'Care et Services' }];
-const FROM = { email: 'no-reply@careetservices.pro', name: 'Care et Services' };
 
-// Brevo attend les pièces jointes au format:
-// attachments: [{ name: "cv.pdf", content: "<base64>" }]
+/**
+ * IMPORTANT: éviter no-reply si possible.
+ * replyTo reste l’email du candidat, donc on peut garder un FROM "contact@"
+ */
+const FROM = { email: 'contact@careetservices.pro', name: 'Care et Services – Recrutement' };
+
+// Brevo attend:
+// attachment: [{ name: "cv.pdf", content: "<base64>" }]
 type BrevoAttachment = { name: string; content: string };
+
+function escapeHtml(input: string): string {
+  return input
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#039;');
+}
+
+function nl2br(input: string): string {
+  return escapeHtml(input).replace(/\n/g, '<br/>');
+}
 
 async function blobToBase64(file: File) {
   const buffer = Buffer.from(await file.arrayBuffer());
   return buffer.toString('base64');
 }
 
+/** Optionnel mais utile : éviter des noms de fichiers bizarres */
+function safeFilename(name: string): string {
+  const cleaned = name.replace(/[^\w.\-() ]+/g, '_').trim();
+  return cleaned.length ? cleaned : 'cv';
+}
+
 async function sendBrevoEmail(params: {
   subject: string;
   htmlContent: string;
+  textContent: string;
   replyToEmail?: string;
   replyToName?: string;
   attachments?: BrevoAttachment[];
@@ -36,16 +61,30 @@ async function sendBrevoEmail(params: {
   const apiKey = process.env.BREVO_API_KEY;
   if (!apiKey) throw new Error('Missing BREVO_API_KEY');
 
-  const payload = {
+  const payload: Record<string, unknown> = {
     sender: FROM,
     to: TO,
     subject: params.subject,
     htmlContent: params.htmlContent,
-    ...(params.replyToEmail
-      ? { replyTo: { email: params.replyToEmail, name: params.replyToName ?? params.replyToEmail } }
-      : {}),
-    ...(params.attachments?.length ? { attachment: params.attachments } : {}),
+    textContent: params.textContent,
+
+    headers: {
+      'X-Mailer': 'CareEtServices Website',
+      'X-Entity-Ref-ID': `job-application-${Date.now()}`,
+    },
   };
+
+  if (params.replyToEmail) {
+    payload.replyTo = {
+      email: params.replyToEmail,
+      name: params.replyToName ?? params.replyToEmail,
+    };
+  }
+
+  // Brevo Transactional: champ "attachment" (singulier)
+  if (params.attachments?.length) {
+    payload.attachment = params.attachments;
+  }
 
   const res = await fetch('https://api.brevo.com/v3/smtp/email', {
     method: 'POST',
@@ -85,7 +124,7 @@ export async function sendApplication(jobTitle: string, formData: FormData): Pro
 
   const cv = formData.get('cv') as File | null;
 
-  // (Optionnel mais recommandé) mini garde-fous
+  // Garde-fous
   const MAX_BYTES = 5 * 1024 * 1024; // 5MB
   const allowedTypes = new Set([
     'application/pdf',
@@ -94,33 +133,67 @@ export async function sendApplication(jobTitle: string, formData: FormData): Pro
   ]);
 
   let attachments: BrevoAttachment[] = [];
-  if (cv && cv.size > 0) {
-    if (cv.size > MAX_BYTES) {
-      // tu peux aussi redirect vers une page d'erreur dédiée
-      throw new Error('CV too large');
-    }
-    if (cv.type && !allowedTypes.has(cv.type)) {
-      throw new Error('Unsupported CV type');
-    }
+  let hasCv = false;
 
-    attachments = [{ name: cv.name, content: await blobToBase64(cv) }];
+  if (cv && cv.size > 0) {
+    if (cv.size > MAX_BYTES) throw new Error('CV too large');
+    if (cv.type && !allowedTypes.has(cv.type)) throw new Error('Unsupported CV type');
+
+    hasCv = true;
+
+    // (optionnel) nommer le fichier de manière plus pro
+    const fullName = `${data.prenom} ${data.nom}`.trim();
+    const filename = safeFilename(`CV_${fullName}_${jobTitle}_${cv.name}`);
+
+    attachments = [{ name: filename, content: await blobToBase64(cv) }];
   }
 
+  const fullName = `${data.prenom} ${data.nom}`.trim();
+
   const html = `
-    <h3>Nouvelle candidature</h3>
-    <p><strong>Poste :</strong> ${jobTitle}</p>
-    <p><strong>Civilité :</strong> ${data.civilite || '—'}</p>
-    <p><strong>Nom :</strong> ${data.prenom} ${data.nom}</p>
-    <p><strong>Email :</strong> ${data.email}</p>
-    <p><strong>Message :</strong><br/>${data.message.replace(/\n/g, '<br/>')}</p>
-    <p><em>CV : ${attachments.length ? 'fourni' : 'non fourni'}</em></p>
-  `;
+    <div style="font-family:Arial, sans-serif; font-size:14px; line-height:1.5">
+      <h3 style="margin:0 0 12px">Nouvelle candidature</h3>
+
+      <p style="margin:0 0 6px"><strong>Poste :</strong> ${escapeHtml(jobTitle)}</p>
+      <p style="margin:0 0 6px"><strong>Civilité :</strong> ${escapeHtml(data.civilite || '—')}</p>
+      <p style="margin:0 0 6px"><strong>Nom :</strong> ${escapeHtml(fullName)}</p>
+      <p style="margin:0 0 12px"><strong>Email :</strong> ${escapeHtml(data.email)}</p>
+
+      <p style="margin:0 0 6px"><strong>Message :</strong></p>
+      <p style="margin:0 0 16px">${nl2br(data.message)}</p>
+
+      <p style="margin:0 0 12px"><em>CV : ${hasCv ? 'fourni (en pièce jointe)' : 'non fourni'}</em></p>
+
+      <hr style="border:none;border-top:1px solid #e5e5e5;margin:16px 0" />
+      <p style="margin:0;color:#666;font-size:12px">
+        Candidature envoyée depuis le formulaire de recrutement du site careetservices.pro
+      </p>
+    </div>
+  `.trim();
+
+  const text = `
+Nouvelle candidature
+
+Poste: ${jobTitle}
+Civilité: ${data.civilite || '—'}
+Nom: ${fullName}
+Email: ${data.email}
+
+Message:
+${data.message}
+
+CV: ${hasCv ? 'fourni (pièce jointe)' : 'non fourni'}
+
+---
+Envoyé depuis le formulaire de recrutement du site careetservices.pro
+  `.trim();
 
   await sendBrevoEmail({
     subject: `Nouvelle candidature – ${jobTitle}`,
     htmlContent: html,
+    textContent: text,
     replyToEmail: data.email,
-    replyToName: `${data.prenom} ${data.nom}`.trim(),
+    replyToName: fullName,
     attachments,
   });
 
